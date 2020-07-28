@@ -35,7 +35,9 @@ namespace ImageAndTextToDatabase
                 //checks if our textboxes are configured correctly.
                 PathValidations.Validations(TextBox_DatabasePath.Text, TextBox_OutputPath.Text);
                 //Creates a text file called first.txt in our output directory.
-                string outputPath = TextBox_OutputPath.Text + "First.txt";
+                string outputPath = TextBox_OutputPath.Text + @"\First.txt";
+                //Adds \ to the end of ot path to make it valid for or function.
+                string DatabasePath = TextBox_DatabasePath.Text + @"\";
                 //Grabs every file found in our directory and puts it in a list called entries
                 string[] entries = Directory.GetFileSystemEntries(TextBox_DatabasePath.Text, "*", System.IO.SearchOption.AllDirectories);
                 //Writes our entire list to our output file!
@@ -53,8 +55,7 @@ namespace ImageAndTextToDatabase
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
-                dialog.Description = "Select the directory that you want to use as the default.";
-                selectedFile = System.IO.Path.GetDirectoryName(dialog.SelectedPath);
+                selectedFile = dialog.SelectedPath;
             }
             TextBox_DatabasePath.Text = selectedFile;
         }
@@ -65,11 +66,9 @@ namespace ImageAndTextToDatabase
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
-                dialog.Description = "Select the directory that you want to use as the default.";
-                selectedFile = System.IO.Path.GetDirectoryName(dialog.SelectedPath);
+                selectedFile = dialog.SelectedPath;
             }
             TextBox_OutputPath.Text = selectedFile;
-
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
