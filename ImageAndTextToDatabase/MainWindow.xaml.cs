@@ -35,8 +35,9 @@ namespace ImageAndTextToDatabase
                 PathValidations.Validations(TextBox_DatabasePath.Text, TextBox_OutputPath.Text);
                 //Creates a text file called first.txt in our output directory.
                 string outputPath = TextBox_OutputPath.Text + "First.txt";
-                
+                //Grabs every file found in our directory and puts it in a list called entries
                 string[] entries = Directory.GetFileSystemEntries(TextBox_DatabasePath.Text, "*", System.IO.SearchOption.AllDirectories);
+                //Writes our entire list to our output file!
                 File.WriteAllLines(outputPath, entries);
             }
             else if (DatabaseSelectorComboBox.SelectedIndex == 1)
