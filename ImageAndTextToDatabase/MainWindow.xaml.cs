@@ -48,13 +48,17 @@ namespace ImageAndTextToDatabase
                 string textFile = TextBox_DatabasePath.Text;
                 //Reads all our lines in specified text file, then puts this into a list
                 string[] filelocations = File.ReadAllLines(textFile);
+                string[] fileEndsWith = { ".jpeg", ".JPEG", ".jpg", ".JPG", ".txt", ".TXT"};
                 foreach (string filelocation in filelocations)
                 {
+                    if (fileEndsWith.Any(x => filelocation.EndsWith(x)))
+                    {                
                     string readText = File.ReadAllText(filelocation);
                     string[] lines = readText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
                     foreach (string line in lines)
                     {
                         Console.WriteLine(line);
+                    }
                     }
                 }
                 MessageBox.Show("Done");
