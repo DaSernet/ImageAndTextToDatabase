@@ -32,14 +32,13 @@ namespace ImageAndTextToDatabase
         { 
             if (DatabaseSelectorComboBox.SelectedIndex == 0)
             {
-                //checks if our textboxes are configured correctly.
+                //Checks if our textboxes are configured correctly.
                 PathValidations.Validations(TextBox_DatabasePath.Text, TextBox_OutputPath.Text);
                 //Creates a text file called first.txt in our output directory.
-                string outputPath = TextBox_OutputPath.Text + @"\First.txt";
-                //Adds \ to the end of ot path to make it valid for or function.
-                string DatabasePath = TextBox_DatabasePath.Text + @"\";
+                string outputPath = TextBox_OutputPath.Text + "First.txt";
+                string databasePath = TextBox_DatabasePath.Text;
                 //Grabs every file found in our directory and puts it in a list called entries
-                string[] entries = Directory.GetFileSystemEntries(TextBox_DatabasePath.Text, "*", System.IO.SearchOption.AllDirectories);
+                string[] entries = Directory.GetFileSystemEntries(databasePath, "*", System.IO.SearchOption.AllDirectories);
                 //Writes our entire list to our output file!
                 File.WriteAllLines(outputPath, entries);
             }
@@ -57,7 +56,7 @@ namespace ImageAndTextToDatabase
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
                 selectedFile = dialog.SelectedPath;
             }
-            TextBox_DatabasePath.Text = selectedFile;
+            TextBox_DatabasePath.Text = selectedFile + @"\";
         }
 
         private void BrowseFolderOutputButton_Click(object sender, RoutedEventArgs e)
@@ -68,7 +67,7 @@ namespace ImageAndTextToDatabase
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
                 selectedFile = dialog.SelectedPath;
             }
-            TextBox_OutputPath.Text = selectedFile;
+            TextBox_OutputPath.Text = selectedFile + @"\";
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
