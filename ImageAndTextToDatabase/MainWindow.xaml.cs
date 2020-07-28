@@ -52,12 +52,22 @@ namespace ImageAndTextToDatabase
         private void BrowseFolderDatabaseButton_Click(object sender, RoutedEventArgs e)
         {
             string selectedFile = null;
-            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
+            if (DatabaseSelectorComboBox.SelectedIndex == 0)
             {
-                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
-                selectedFile = dialog.SelectedPath;
+                using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
+                {
+                    System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                    selectedFile = dialog.SelectedPath + @"\";
+                }
+            } else if (DatabaseSelectorComboBox.SelectedIndex == 1)
+                {
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                if (openFileDialog1.ShowDialog() == true)
+                {
+                    selectedFile = System.IO.Path.GetDirectoryName(openFileDialog1.FileName) + openFileDialog1.FileName;
+                }
             }
-            TextBox_DatabasePath.Text = selectedFile + @"\";
+            TextBox_DatabasePath.Text = selectedFile;
         }
 
         private void BrowseFolderOutputButton_Click(object sender, RoutedEventArgs e)
