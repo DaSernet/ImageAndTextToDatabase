@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageAndTextToDatabase"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="File to database converter" Height="318.443" Width="685.656">
     <Grid>
-        
+        <Button Content="Convert" HorizontalAlignment="Left" Margin="23,235,0,0" VerticalAlignment="Top" Click="ConvertButton_Click" RenderTransformOrigin="1.285,2.307" Width="75"/>
+        <Label Content="Database path" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="TextBox_DatabasePath" HorizontalAlignment="Left" Margin="25,36,0,0" Text="Database path.." TextWrapping="Wrap" VerticalAlignment="Top" Width="559"/>
+        <Label Content="Output path" HorizontalAlignment="Left" Margin="25,81,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="TextBox_OutputPath" HorizontalAlignment="Left" Margin="25,107,0,0" Text="Output path.." TextWrapping="Wrap" VerticalAlignment="Top" Width="559"/>
+        <Button Content="Browse folder" HorizontalAlignment="Left" Margin="25,59,0,0" VerticalAlignment="Top" Click="BrowseFolderDatabaseButton_Click"/>
+        <Button Content="Browse folder" HorizontalAlignment="Left" Margin="23,130,0,0" VerticalAlignment="Top" Click="BrowseFolderOutputButton_Click"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="544,235,0,0" VerticalAlignment="Top" Click="CloseButton_Click" Width="40"/>
+        <ComboBox Name="DatabaseSelectorComboBox" HorizontalAlignment="Left" Margin="23,190,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem IsSelected="True">Text tree hierarchy</ComboBoxItem>
+            <ComboBoxItem>SQL</ComboBoxItem >
+        </ComboBox>
+        <Label Content="Output" HorizontalAlignment="Left" Margin="25,159,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
