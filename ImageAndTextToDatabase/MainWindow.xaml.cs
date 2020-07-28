@@ -50,25 +50,25 @@ namespace ImageAndTextToDatabase
         private void BrowseFolderDatabaseButton_Click(object sender, RoutedEventArgs e)
         {
             string selectedFile = null;
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            if (openFileDialog1.ShowDialog() == true)
+            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
-                selectedFile = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
+                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                dialog.Description = "Select the directory that you want to use as the default.";
+                selectedFile = System.IO.Path.GetDirectoryName(dialog.SelectedPath);
             }
-            string selectedDirectory = selectedFile.Substring(0, selectedFile.LastIndexOf("\\") + 1);
-            TextBox_DatabasePath.Text = selectedDirectory;
+            TextBox_DatabasePath.Text = selectedFile;
         }
 
         private void BrowseFolderOutputButton_Click(object sender, RoutedEventArgs e)
         {
             string selectedFile = null;
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            if (openFileDialog1.ShowDialog() == true)
+            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
-                selectedFile = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
+                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                dialog.Description = "Select the directory that you want to use as the default.";
+                selectedFile = System.IO.Path.GetDirectoryName(dialog.SelectedPath);
             }
-            string selectedDirectory = selectedFile.Substring(0, selectedFile.LastIndexOf("\\") + 1);
-            TextBox_OutputPath.Text = selectedDirectory;
+            TextBox_OutputPath.Text = selectedFile;
 
         }
 
