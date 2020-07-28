@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageAndTextToDatabase"
         mc:Ignorable="d"
-        Title="MainWindow" Height="318.443" Width="685.656">
+        Title="File to database converter" Height="318.443" Width="685.656">
     <Grid>
         <Button Content="Convert" HorizontalAlignment="Left" Margin="23,235,0,0" VerticalAlignment="Top" Click="ConvertButton_Click" RenderTransformOrigin="1.285,2.307" Width="75"/>
         <Label Content="Database path" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top"/>
