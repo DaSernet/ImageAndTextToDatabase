@@ -1,10 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Storage;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 
-namespace FileHierachy2database.Validations
+namespace ImageAndTextToDatabase.Validations
 {
     class PathValidations
     {
