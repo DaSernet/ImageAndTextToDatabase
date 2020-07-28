@@ -45,7 +45,19 @@ namespace ImageAndTextToDatabase
             }
             else if (DatabaseSelectorComboBox.SelectedIndex == 1)
             {
-                
+                string textFile = TextBox_DatabasePath.Text;
+                //Reads all our lines in specified text file, then puts this into a list
+                string[] filelocations = File.ReadAllLines(textFile);
+                foreach (string filelocation in filelocations)
+                {
+                    string readText = File.ReadAllText(filelocation);
+                    string[] lines = readText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                    foreach (string line in lines)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+                MessageBox.Show("Done");
             }
         }
 
@@ -64,10 +76,10 @@ namespace ImageAndTextToDatabase
                 OpenFileDialog openFileDialog1 = new OpenFileDialog();
                 if (openFileDialog1.ShowDialog() == true)
                 {
-                    selectedFile = System.IO.Path.GetDirectoryName(openFileDialog1.FileName) + openFileDialog1.FileName;
+                    selectedFile = openFileDialog1.FileName;
                 }
             }
-            TextBox_DatabasePath.Text = selectedFile;
+            TextBox_DatabasePath.Text = selectedFile.Replace(@"\","/");
         }
 
         private void BrowseFolderOutputButton_Click(object sender, RoutedEventArgs e)
@@ -76,9 +88,9 @@ namespace ImageAndTextToDatabase
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
-                selectedFile = dialog.SelectedPath;
+                selectedFile = dialog.SelectedPath + @"\";
             }
-            TextBox_OutputPath.Text = selectedFile + @"\";
+            TextBox_OutputPath.Text = selectedFile.Replace(@"\", "/");
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
