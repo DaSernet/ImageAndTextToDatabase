@@ -41,6 +41,7 @@ namespace ImageAndTextToDatabase
                 string[] entries = Directory.GetFileSystemEntries(databasePath, "*", System.IO.SearchOption.AllDirectories);
                 //Writes our entire list to our output file!
                 File.WriteAllLines(outputPath, entries);
+                MessageBox.Show("Done");
             }
             else if (DatabaseSelectorComboBox.SelectedIndex == 1)
             {
