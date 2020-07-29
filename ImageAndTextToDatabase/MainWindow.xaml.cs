@@ -104,8 +104,7 @@ namespace ImageAndTextToDatabase
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            string line = "EthnicGroup=Obamba";
-            AttributeFilter.MatchAttribute(line);
+            System.Windows.Forms.Application.Exit();
         }
     }
 }
