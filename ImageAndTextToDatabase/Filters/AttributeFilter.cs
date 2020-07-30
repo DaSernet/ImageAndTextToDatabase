@@ -8,7 +8,7 @@ using ImageAndTextToDatabase.Models;
 
 namespace ImageAndTextToDatabase.Filters
 {
-    class AttributeFilter
+    static class AttributeFilter
     {
         public static string[] MatchAttribute(String line)
         {
@@ -27,8 +27,8 @@ namespace ImageAndTextToDatabase.Filters
                         case "Id":
                             values[0] = "Identifier";
                             break;
-                        case "Public": 
-                            values[0] = "Ispublic"; 
+                        case "Public":
+                            values[0] = "Ispublic";
                             break;
                     }
                 }
