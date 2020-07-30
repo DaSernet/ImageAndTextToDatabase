@@ -270,6 +270,9 @@ namespace ImageAndTextToDatabase
                                 case "objectgender":
                                     newArtwork.Objectgender = extractions[1];
                                     break;
+                                case "objectjanus":
+                                    newArtwork.Objectjanus² = extractions[1];
+                                    break;
                                 case "objectname":
                                     newArtwork.Objectname = extractions[1];
                                     break;

@@ -76,6 +76,7 @@
         public string Medwoinfo { get; set; }
         public string Needbetter { get; set; }
         public string Objectgender { get; set; }
+        public string Objectjanus { get; set; }
         public string Objectname { get; set; }
         public string Objectnameex { get; set; }
         public string Objectnamegn { get; set; }
