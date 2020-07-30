@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using ImageAndTextToDatabase.Validations;
 using ImageAndTextToDatabase.Filters;
 using ImageAndTextToDatabase.Repositories;
+using ImageAndTextToDatabase.Models;
 
 namespace ImageAndTextToDatabase
 {
@@ -63,11 +64,15 @@ namespace ImageAndTextToDatabase
                     {
                         string readText = File.ReadAllText(filelocation);
                         string[] lines = readText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+
+                        Artwork newArtwork = new Artwork();
+
                         foreach (string line in lines)
                         {
                             string[] extractions = AttributeFilter.MatchAttribute(line);
                             Console.WriteLine(extractions[0]);
                             Console.WriteLine(extractions[1]);
+
                         }
                     }
                 }

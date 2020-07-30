@@ -12,22 +12,17 @@ namespace ImageAndTextToDatabase.Filters
     {
         public static string[] MatchAttribute(String line)
         {
-            string[] attributeOptions = { "acquiredfrom", "acquisitiondate", "additionalfeatures", "artist", "artistgender", "artistsg", "associatefeatures", "auctions", "calabashinfo", "certificate", "chefferie", "clan", "collectedby", "collectedwhen", "collection", "commanditaire", "comments", "commgender", "commonfeatures", "commsg", "condition", "confidential", "country", "createdate", "createdatemax", "createdatemin", "creditline", "depth", "diameter", "donationfrom", "ethnicgroup", "exhibition", "features", "groups", "hairinfo", "height", "id", "inventory", "kingdom", "langgroup", "length", "medbeinfo", "medbkinfo", "medboinfo", "medceinfo", "medclinfo", "medfeinfo", "medfiinfo", "medglinfo", "medhoinfo", "medirinfo", "medium", "medivinfo", "medmainfo", "medotinfo", "medrainfo", "medreinfo", "medseedpodsinfo", "medshinfo", "medskinfo", "medstinfo", "medwoinfo", "needbetter", "objectgender", "objectname", "objectnameex", "objectnamegn", "objectposture", "photocopy", "photographer", "photoinvnr", "photoprov", "pigmentinfo", "provenance", "public", "publication", "raaiid", "region", "restoration", "ritualassoc", "sitearcheo", "structuralfeatures", "tms", "usage", "village", "web", "weight", "width", "workshop", "workshoplist", "yaleid" };
+            string[] attributeOptions = { "Acquiredfrom", "Acquisitiondate", "Additionalfeatures", "Artist", "Artistgender", "Artistsg", "Associatefeatures", "Auctions", "Calabashinfo", "Certificate", "Chefferie", "Clan", "Collectedby", "Collectedwhen", "Collection", "Commanditaire", "Comments", "Commgender", "Commonfeatures", "Commsg", "Condition", "Confidential", "Country", "Createdate", "Createdatemax", "Createdatemin", "Creditline", "Depth", "Diameter", "Donationfrom", "Ethnicgroup", "Exhibition", "Features", "Groups", "Gairinfo", "Geight", "Inventory", "Kingdom", "Langgroup", "Length", "Medbeinfo", "Medbkinfo", "Medboinfo", "Medceinfo", "Medclinfo", "Medfeinfo", "Medfiinfo", "Medglinfo", "Medhoinfo", "Medirinfo", "Medium", "Medivinfo", "Medmainfo", "Medotinfo", "Medrainfo", "Medreinfo", "Medseedpodsinfo", "Medshinfo", "Medskinfo", "Medstinfo", "Medwoinfo", "Needbetter", "Objectgender", "Objectname", "Objectnameex", "Objectnamegn", "Objectposture", "Photocopy", "Photographer", "Photoinvnr", "Photoprov", "Pigmentinfo", "Provenance", "Public", "Publication", "Raaiid", "Region", "Restoration", "Ritualassoc", "Sitearcheo", "Structuralfeatures", "Tms", "Usage", "Village", "Web", "Weight", "Width", "Workshop", "Workshoplist", "Yaleid", "Id", };
             string[] values = line.Split('=');
             //Our attribute is in values[0]
             //Our data is in values[1]
 
-            int counter = 0;
-            int counterMatch;
-            string attributeName;
+            //this checks if our string[] contains a match with our attributeOptions[]
             foreach (string attributeOption in attributeOptions)
             {
                 if (values[0] == attributeOption)
                 {
-                    counterMatch = counter;
-                    attributeName = values[0];
-
-                    switch (attributeName)
+                    switch (values[0])
                     {
                         case "Id":
                             values[0] = "Identifier";
@@ -37,7 +32,6 @@ namespace ImageAndTextToDatabase.Filters
                             break;
                     }
                 }
-                counter++;
             }
             return values;
         }
