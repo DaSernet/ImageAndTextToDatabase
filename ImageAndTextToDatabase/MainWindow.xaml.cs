@@ -359,6 +359,7 @@ namespace ImageAndTextToDatabase
                                     break;
                             }
                         }
+                        artworkRepository.Add(newArtwork);
                     }
                 }
                 MessageBox.Show("Done");
