@@ -13,11 +13,11 @@
         {
         }
 
-        public virtual DbSet<Object> Objects { get; set; }
+        public virtual DbSet<Models.Object> Objects { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Object>()
+            modelBuilder.Entity<Models.Object>()
                 .Property(e => e.Identifier)
                 .IsFixedLength();
 
