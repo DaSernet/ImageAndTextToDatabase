@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ImageAndTextToDatabase.Validations;
 using ImageAndTextToDatabase.Filters;
+using ImageAndTextToDatabase.Repositories;
 
 namespace ImageAndTextToDatabase
 {
@@ -24,9 +25,13 @@ namespace ImageAndTextToDatabase
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IArtworkRepository artworkRepository;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            artworkRepository = new EFArtworkRepository();
         }
 
         private void ConvertButton_Click(object sender, RoutedEventArgs e)
@@ -60,8 +65,9 @@ namespace ImageAndTextToDatabase
                         string[] lines = readText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
                         foreach (string line in lines)
                         {
-                            AttributeFilter.MatchAttribute(line);
-                            Console.WriteLine(line);
+                            string[] extractions = AttributeFilter.MatchAttribute(line);
+                            Console.WriteLine(extractions[0]);
+                            Console.WriteLine(extractions[1]);
                         }
                     }
                 }
