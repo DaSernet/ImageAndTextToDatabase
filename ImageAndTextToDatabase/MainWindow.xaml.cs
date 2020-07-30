@@ -67,7 +67,6 @@ namespace ImageAndTextToDatabase
                         counter++;
                         Console.WriteLine("Started processing artwork #" + counter);
 
-
                         string readText = File.ReadAllText(filelocation);
                         string[] lines = readText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 
