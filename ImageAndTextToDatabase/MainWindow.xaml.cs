@@ -186,7 +186,7 @@ namespace ImageAndTextToDatabase
                                 case "height":
                                     newArtwork.Height = extractions[1];
                                     break;
-                                case "Identifier":
+                                case "identifier":
                                     newArtwork.Identifier = extractions[1];
                                     break;
                                 case "inventory":
@@ -303,7 +303,7 @@ namespace ImageAndTextToDatabase
                                 case "provenance":
                                     newArtwork.Provenance = extractions[1];
                                     break;
-                                case "Ispublic":
+                                case "ispublic":
                                     newArtwork.Ispublic = extractions[1];
                                     break;
                                 case "publication":
