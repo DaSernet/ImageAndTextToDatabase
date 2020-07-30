@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ImageAndTextToDatabase.Validations;
+using ImageAndTextToDatabase.Filters;
 
 namespace ImageAndTextToDatabase
 {
@@ -59,6 +60,7 @@ namespace ImageAndTextToDatabase
                         string[] lines = readText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
                         foreach (string line in lines)
                         {
+                            AttributeFilter.MatchAttribute(line);
                             Console.WriteLine(line);
                         }
                     }
@@ -102,7 +104,7 @@ namespace ImageAndTextToDatabase
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            System.Windows.Forms.Application.Exit();
         }
     }
 }
