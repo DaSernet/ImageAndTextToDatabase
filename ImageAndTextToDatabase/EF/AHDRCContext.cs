@@ -13,11 +13,11 @@
         {
         }
 
-        public virtual DbSet<Models.Object> Objects { get; set; }
+        public virtual DbSet<Artwork> Artworks { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Models.Object>()
+            modelBuilder.Entity<Artwork>()
                 .Property(e => e.Identifier)
                 .IsFixedLength();
 
