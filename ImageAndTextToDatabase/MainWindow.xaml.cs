@@ -78,282 +78,282 @@ namespace ImageAndTextToDatabase
                             string[] extractions = AttributeFilter.MatchAttribute(line);
                             switch (extractions[0])
                             {
-                                case "Acquiredfrom":
+                                case "acquiredfrom":
                                     newArtwork.Acquiredfrom = extractions[1];
                                     break;
-                                case "Acquisitiondate":
+                                case "acquisitiondate":
                                     newArtwork.Acquisitiondate = extractions[1];
                                     break;
-                                case "Additionalfeatures":
+                                case "additionalfeatures":
                                     newArtwork.Additionalfeatures = extractions[1];
                                     break;
-                                case "Artist":
+                                case "artist":
                                     newArtwork.Artist = extractions[1];
                                     break;
-                                case "Artistgender":
+                                case "artistgender":
                                     newArtwork.Artistgender = extractions[1];
                                     break;
-                                case "Artistsg":
+                                case "artistsg":
                                     newArtwork.Artistsg = extractions[1];
                                     break;
-                                case "Associatefeatures":
+                                case "associatefeatures":
                                     newArtwork.Associatefeatures = extractions[1];
                                     break;
-                                case "Auctions":
+                                case "auctions":
                                     newArtwork.Auctions = extractions[1];
                                     break;
-                                case "Calabashinfo":
+                                case "calabashinfo":
                                     newArtwork.Calabashinfo = extractions[1];
                                     break;
-                                case "Certificate":
+                                case "certificate":
                                     newArtwork.Certificate = extractions[1];
                                     break;
-                                case "Chefferie":
+                                case "chefferie":
                                     newArtwork.Chefferie = extractions[1];
                                     break;
-                                case "Clan":
+                                case "clan":
                                     newArtwork.Clan = extractions[1];
                                     break;
-                                case "Collectedby":
+                                case "collectedby":
                                     newArtwork.Collectedby = extractions[1];
                                     break;
-                                case "Collectedwhen":
+                                case "collectedwhen":
                                     newArtwork.Collectedwhen = extractions[1];
                                     break;
-                                case "Collection":
+                                case "collection":
                                     newArtwork.Collection = extractions[1];
                                     break;
-                                case "Commanditaire":
+                                case "commanditaire":
                                     newArtwork.Commanditaire = extractions[1];
                                     break;
-                                case "Comments":
+                                case "comments":
                                     newArtwork.Comments = extractions[1];
                                     break;
-                                case "Commgender":
+                                case "commgender":
                                     newArtwork.Commgender = extractions[1];
                                     break;
-                                case "Commonfeatures":
+                                case "commonfeatures":
                                     newArtwork.Commonfeatures = extractions[1];
                                     break;
-                                case "Commsg":
+                                case "commsg":
                                     newArtwork.Commsg = extractions[1];
                                     break;
-                                case "Condition":
+                                case "condition":
                                     newArtwork.Condition = extractions[1];
                                     break;
-                                case "Confidential":
+                                case "confidential":
                                     newArtwork.Confidential = extractions[1];
                                     break;
-                                case "Country":
+                                case "country":
                                     newArtwork.Country = extractions[1];
                                     break;
-                                case "Createdate":
+                                case "createdate":
                                     newArtwork.Createdate = extractions[1];
                                     break;
-                                case "Createdatemax":
+                                case "createdatemax":
                                     newArtwork.Createdatemax = extractions[1];
                                     break;
-                                case "Createdatemin":
+                                case "createdatemin":
                                     newArtwork.Createdatemin = extractions[1];
                                     break;
-                                case "Creditline":
+                                case "creditline":
                                     newArtwork.Creditline = extractions[1];
                                     break;
-                                case "Depth":
+                                case "depth":
                                     newArtwork.Depth = extractions[1];
                                     break;
-                                case "Diameter":
+                                case "diameter":
                                     newArtwork.Diameter = extractions[1];
                                     break;
-                                case "Donationfrom":
+                                case "donationfrom":
                                     newArtwork.Donationfrom = extractions[1];
                                     break;
-                                case "Ethnicgroup":
+                                case "ethnicgroup":
                                     newArtwork.Ethnicgroup = extractions[1];
                                     break;
-                                case "Exhibition":
+                                case "exhibition":
                                     newArtwork.Exhibition = extractions[1];
                                     break;
-                                case "Features":
+                                case "features":
                                     newArtwork.Features = extractions[1];
                                     break;
-                                case "Groups":
+                                case "groups":
                                     newArtwork.Groups = extractions[1];
                                     break;
-                                case "Hairinfo":
+                                case "hairinfo":
                                     newArtwork.Hairinfo = extractions[1];
                                     break;
-                                case "Height":
+                                case "height":
                                     newArtwork.Height = extractions[1];
                                     break;
                                 case "Identifier":
                                     newArtwork.Identifier = extractions[1];
                                     break;
-                                case "Inventory":
+                                case "inventory":
                                     newArtwork.Inventory = extractions[1];
                                     break;
-                                case "Kingdom":
+                                case "kingdom":
                                     newArtwork.Kingdom = extractions[1];
                                     break;
-                                case "Langgroup":
+                                case "langgroup":
                                     newArtwork.Langgroup = extractions[1];
                                     break;
-                                case "Length":
+                                case "length":
                                     newArtwork.Length = extractions[1];
                                     break;
-                                case "Medbeinfo":
+                                case "medbeinfo":
                                     newArtwork.Medbeinfo = extractions[1];
                                     break;
-                                case "Medbkinfo":
+                                case "medbkinfo":
                                     newArtwork.Medbkinfo = extractions[1];
                                     break;
-                                case "Medboinfo":
+                                case "medboinfo":
                                     newArtwork.Medboinfo = extractions[1];
                                     break;
-                                case "Medceinfo":
+                                case "medceinfo":
                                     newArtwork.Medceinfo = extractions[1];
                                     break;
-                                case "Medclinfo":
+                                case "medclinfo":
                                     newArtwork.Medclinfo = extractions[1];
                                     break;
-                                case "Medfeinfo":
+                                case "medfeinfo":
                                     newArtwork.Medfeinfo = extractions[1];
                                     break;
-                                case "Medfiinfo":
+                                case "medfiinfo":
                                     newArtwork.Medfiinfo = extractions[1];
                                     break;
-                                case "Medglinfo":
+                                case "medglinfo":
                                     newArtwork.Medglinfo = extractions[1];
                                     break;
-                                case "Medhoinfo":
+                                case "medhoinfo":
                                     newArtwork.Medhoinfo = extractions[1];
                                     break;
-                                case "Medirinfo":
+                                case "medirinfo":
                                     newArtwork.Medirinfo = extractions[1];
                                     break;
-                                case "Medium":
+                                case "medium":
                                     newArtwork.Medium = extractions[1];
                                     break;
-                                case "Medivinfo":
+                                case "medivinfo":
                                     newArtwork.Medivinfo = extractions[1];
                                     break;
-                                case "Medmainfo":
+                                case "medmainfo":
                                     newArtwork.Medmainfo = extractions[1];
                                     break;
-                                case "Medotinfo":
+                                case "medotinfo":
                                     newArtwork.Medotinfo = extractions[1];
                                     break;
-                                case "Medrainfo":
+                                case "medrainfo":
                                     newArtwork.Medrainfo = extractions[1];
                                     break;
-                                case "Medreinfo":
+                                case "medreinfo":
                                     newArtwork.Medreinfo = extractions[1];
                                     break;
-                                case "Medseedpodsinfo":
+                                case "medseedpodsinfo":
                                     newArtwork.Medseedpodsinfo = extractions[1];
                                     break;
-                                case "Medshinfo":
+                                case "medshinfo":
                                     newArtwork.Medshinfo = extractions[1];
                                     break;
-                                case "Medskinfo":
+                                case "medskinfo":
                                     newArtwork.Medskinfo = extractions[1];
                                     break;
-                                case "Medstinfo":
+                                case "medstinfo":
                                     newArtwork.Medstinfo = extractions[1];
                                     break;
-                                case "Medwoinfo":
+                                case "medwoinfo":
                                     newArtwork.Medwoinfo = extractions[1];
                                     break;
-                                case "Needbetter":
+                                case "needbetter":
                                     newArtwork.Needbetter = extractions[1];
                                     break;
-                                case "Objectgender":
+                                case "objectgender":
                                     newArtwork.Objectgender = extractions[1];
                                     break;
-                                case "Objectname":
+                                case "objectname":
                                     newArtwork.Objectname = extractions[1];
                                     break;
-                                case "Objectnameex":
+                                case "objectnameex":
                                     newArtwork.Objectnameex = extractions[1];
                                     break;
-                                case "Objectnamegn":
+                                case "objectnamegn":
                                     newArtwork.Objectnamegn = extractions[1];
                                     break;
-                                case "Objectposture":
+                                case "objectposture":
                                     newArtwork.Objectposture = extractions[1];
                                     break;
-                                case "Photocopy":
+                                case "photocopy":
                                     newArtwork.Photocopy = extractions[1];
                                     break;
-                                case "Photographer":
+                                case "photographer":
                                     newArtwork.Photographer = extractions[1];
                                     break;
-                                case "Photoinvnr":
+                                case "photoinvnr":
                                     newArtwork.Photoinvnr = extractions[1];
                                     break;
-                                case "Photoprov":
+                                case "photoprov":
                                     newArtwork.Photoprov = extractions[1];
                                     break;
-                                case "Pigmentinfo":
+                                case "pigmentinfo":
                                     newArtwork.Pigmentinfo = extractions[1];
                                     break;
-                                case "Provenance":
+                                case "provenance":
                                     newArtwork.Provenance = extractions[1];
                                     break;
                                 case "Ispublic":
                                     newArtwork.Ispublic = extractions[1];
                                     break;
-                                case "Publication":
+                                case "publication":
                                     newArtwork.Publication = extractions[1];
                                     break;
-                                case "Raaiid":
+                                case "raaiid":
                                     newArtwork.Raaiid = extractions[1];
                                     break;
-                                case "Region":
+                                case "region":
                                     newArtwork.Region = extractions[1];
                                     break;
-                                case "Restoration":
+                                case "restoration":
                                     newArtwork.Restoration = extractions[1];
                                     break;
-                                case "Ritualassoc":
+                                case "ritualassoc":
                                     newArtwork.Ritualassoc = extractions[1];
                                     break;
-                                case "Sitearcheo":
+                                case "sitearcheo":
                                     newArtwork.Sitearcheo = extractions[1];
                                     break;
-                                case "Structuralfeatures":
+                                case "structuralfeatures":
                                     newArtwork.Structuralfeatures = extractions[1];
                                     break;
-                                case "Tms":
+                                case "tms":
                                     newArtwork.Tms = extractions[1];
                                     break;
-                                case "Usage":
+                                case "usage":
                                     newArtwork.Usage = extractions[1];
                                     break;
-                                case "Village":
+                                case "village":
                                     newArtwork.Village = extractions[1];
                                     break;
-                                case "Web":
+                                case "web":
                                     newArtwork.Web = extractions[1];
                                     break;
-                                case "Weight":
+                                case "weight":
                                     newArtwork.Weight = extractions[1];
                                     break;
-                                case "Width":
+                                case "width":
                                     newArtwork.Width = extractions[1];
                                     break;
-                                case "Workshop":
+                                case "workshop":
                                     newArtwork.Workshop = extractions[1];
                                     break;
-                                case "Workshoplist":
+                                case "workshoplist":
                                     newArtwork.Workshoplist = extractions[1];
                                     break;
-                                case "Yaleid":
+                                case "yaleid":
                                     newArtwork.Yaleid = extractions[1];
                                     break;
                                 default:
                                     //debugger
-                                    Console.WriteLine("error in" + filelocation);
+                                    Console.WriteLine("error in: " + filelocation);
                                     Console.WriteLine(extractions[0]);
                                     Console.WriteLine(extractions[1]);
                                     break;

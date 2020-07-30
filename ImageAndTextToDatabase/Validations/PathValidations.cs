@@ -5,7 +5,7 @@ using System.Windows;
 
 namespace ImageAndTextToDatabase.Validations
 {
-    class PathValidations
+    static class PathValidations
     {
         public static void Validations(String DatabasePath, String OutputPath)
         {

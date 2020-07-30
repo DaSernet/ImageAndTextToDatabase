@@ -20,18 +20,15 @@ namespace ImageAndTextToDatabase.Filters
             //this checks if our string[] contains a match with our attributeOptions[]
             foreach (string attributeOption in attributeOptions)
             {
-                if (values[0] == attributeOption)
+                if (values[0] == "id")
                 {
-                    switch (values[0])
-                    {
-                        case "Id":
-                            values[0] = "Identifier";
-                            break;
-                        case "Public":
-                            values[0] = "Ispublic";
-                            break;
-                    }
+                    values[0] = "Identifier";
                 }
+                if (values[0] == "public")
+                {
+                    values[0] = "Ispublic";
+                }
+
             }
             return values;
         }
