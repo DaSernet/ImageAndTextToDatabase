@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+using ImageAndTextToDatabase.Repositories;
+using System.Linq;
+using ImageAndTextToDatabase.Models;
 
 namespace ImageAndTextToDatabase.Filters
 {
@@ -30,6 +33,10 @@ namespace ImageAndTextToDatabase.Filters
                     Console.WriteLine(attributeName);
                     
                     //massive switch here
+
+                    //
+
+                    artworkRepository.Add(newArtwork)
                 }
                 counter++;
             }
