@@ -103,5 +103,6 @@
         public string Workshop { get; set; }
         public string Workshoplist { get; set; }
         public string Yaleid { get; set; }
+        public byte[] ProductImage { get; set; }
     }
 }
