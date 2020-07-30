@@ -87,6 +87,7 @@
     <Compile Include="Filters\AttributeFilter.cs" />
     <Compile Include="Models\Artwork.cs" />
     <Compile Include="Repositories\EFArtworkRepository.cs" />
+    <Compile Include="Repositories\IArtworkRepository.cs" />
     <Compile Include="Validations\PathValidations.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
