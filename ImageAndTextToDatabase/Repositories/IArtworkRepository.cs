@@ -9,7 +9,7 @@ namespace ImageAndTextToDatabase.Repositories
 {
     public interface IArtworkRepository
     {
-        Artwork GetOne(string name);
+        /*Artwork GetOne(string name);*/
         IList<Artwork> GetAll();
         void Add(Artwork artwork);
         void Update(Artwork artwork);

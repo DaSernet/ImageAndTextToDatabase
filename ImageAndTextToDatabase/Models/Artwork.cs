@@ -10,7 +10,7 @@
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = true)]
         [StringLength(500)]
         public string Acquiredfrom { get; set; }
         public string Acquisitiondate { get; set; }
@@ -76,6 +76,7 @@
         public string Medwoinfo { get; set; }
         public string Needbetter { get; set; }
         public string Objectgender { get; set; }
+        public string Objectjanus { get; set; }
         public string Objectname { get; set; }
         public string Objectnameex { get; set; }
         public string Objectnamegn { get; set; }
@@ -103,6 +104,6 @@
         public string Workshop { get; set; }
         public string Workshoplist { get; set; }
         public string Yaleid { get; set; }
-        public byte[] ProductImage { get; set; }
+        public byte[] Image { get; set; }
     }
 }
