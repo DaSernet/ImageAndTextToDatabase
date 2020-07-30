@@ -14,6 +14,7 @@ namespace ImageAndTextToDatabase.Filters
             //Our attribute is in values[0]
             //Our data is in values[1]
             //id in our values[0] will = identifier in our end database
+            //public = Ispublic
 
             int counter = 0;
             int counterMatch;
@@ -27,6 +28,8 @@ namespace ImageAndTextToDatabase.Filters
                     attributeName = values[0];
                     Console.WriteLine(counterMatch);
                     Console.WriteLine(attributeName);
+                    
+                    //massive switch here
                 }
                 counter++;
             }
