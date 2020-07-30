@@ -13,6 +13,7 @@ namespace ImageAndTextToDatabase.Filters
             string[] values = line.Split('=');
             //Our attribute is in values[0]
             //Our data is in values[1]
+            //id in our values[0] will = identifier in our end database
 
             int counter = 0;
             int counterMatch;
