@@ -80,7 +80,8 @@ namespace ImageAndTextToDatabase
                             Console.WriteLine("File not found: " + imageLocation);
                         } else
                         {
-                            newArtwork.Image = await ImageToByte.ImageToByteConverter(imageLocation);
+                            Task<byte[]> readImageTask = ImageToByte.ImageToByteConverter(imageLocation);
+                            newArtwork.Image = await readImageTask;
                         }
 
 

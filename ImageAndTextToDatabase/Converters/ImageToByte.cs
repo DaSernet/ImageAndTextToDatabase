@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,17 +9,15 @@ namespace ImageAndTextToDatabase.Converters
 {
     class ImageToByte
     {
-        public async Task<byte[]> ImageToByteConverter(string)
+        public static async Task<byte[]> ImageToByteConverter(string filePath)
         {
-            using (var inputStream = await file.OpenSequentialReadAsync())
+            byte[] imageBytes;
+            using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, true))
             {
-                var readStream = inputStream.AsStreamForRead();
-
-                var byteArray = new byte[readStream.Length];
-                await readStream.ReadAsync(byteArray, 0, byteArray.Length);
-                return byteArray;
+                imageBytes = new byte[fileStream.Length];
+                await fileStream.ReadAsync(imageBytes, 0, (int)fileStream.Length);
             }
-            return Image;
+            return imageBytes;
         }
     }
 }
