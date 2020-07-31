@@ -57,7 +57,7 @@ namespace ImageAndTextToDatabase
                 //Reads all our lines in specified text file, then puts this into a list
                 string[] filelocations = File.ReadAllLines(textFile);
                 //Filters our file extensions
-                string[] fileEndsWith = { ".jpeg", ".JPEG", ".jpg", ".JPG", ".txt", ".TXT" };
+                string[] fileEndsWith = { ".txt", ".TXT" };
                 int counter = 0;
                 foreach (string filelocation in filelocations)
                 {
@@ -72,7 +72,17 @@ namespace ImageAndTextToDatabase
 
                         //we still need to add all images in our folder to our database
                         //
-                        newArtwork.Image = await ImageToByte.ImageToByteConverter();
+                        string imageLocation = filelocation;
+                        imageLocation.Replace("info_", "");
+                        imageLocation.Replace(".txt", ".jpg");
+                        if (!File.Exists(imageLocation))
+                        {
+                            Console.WriteLine("File not found: " + imageLocation);
+                        } else
+                        {
+                            newArtwork.Image = await ImageToByte.ImageToByteConverter(imageLocation);
+                        }
+
 
                         string readText = File.ReadAllText(filelocation);
                         string[] lines = readText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
