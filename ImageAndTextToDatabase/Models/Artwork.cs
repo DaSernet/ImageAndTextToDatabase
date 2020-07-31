@@ -9,9 +9,6 @@
     public partial class Artwork
     {
         public int Id { get; set; }
-
-        [Required(AllowEmptyStrings = true)]
-        [StringLength(500)]
         public string Acquiredfrom { get; set; }
         public string Acquisitiondate { get; set; }
         public string Additionalfeatures { get; set; }
