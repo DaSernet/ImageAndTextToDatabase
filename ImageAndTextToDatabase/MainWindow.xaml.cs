@@ -36,7 +36,7 @@ namespace ImageAndTextToDatabase
             artworkRepository = new EFArtworkRepository();
         }
 
-        private async Task ConvertButton_ClickAsync(object sender, RoutedEventArgs e)
+        private async void ConvertButton_Click(object sender, RoutedEventArgs e)
         {
             if (DatabaseSelectorComboBox.SelectedIndex == 0)
             {
@@ -71,7 +71,6 @@ namespace ImageAndTextToDatabase
                         Artwork newArtwork = new Artwork();
 
                         //we still need to add all images in our folder to our database
-                        //
                         string imageLocation = filelocation;
                         imageLocation.Replace("info_", "");
                         imageLocation.Replace(".txt", ".jpg");
@@ -82,8 +81,8 @@ namespace ImageAndTextToDatabase
                         {
                             Task<byte[]> readImageTask = ImageToByte.ImageToByteConverter(imageLocation);
                             newArtwork.Image = await readImageTask;
+                            imageLocation.Replace("001", "002");
                         }
-
 
                         string readText = File.ReadAllText(filelocation);
                         string[] lines = readText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
