@@ -18,6 +18,7 @@ using ImageAndTextToDatabase.Validations;
 using ImageAndTextToDatabase.Filters;
 using ImageAndTextToDatabase.Repositories;
 using ImageAndTextToDatabase.Models;
+using ImageAndTextToDatabase.Converters;
 
 namespace ImageAndTextToDatabase
 {
@@ -35,7 +36,7 @@ namespace ImageAndTextToDatabase
             artworkRepository = new EFArtworkRepository();
         }
 
-        private void ConvertButton_Click(object sender, RoutedEventArgs e)
+        private async Task ConvertButton_ClickAsync(object sender, RoutedEventArgs e)
         {
             if (DatabaseSelectorComboBox.SelectedIndex == 0)
             {
@@ -65,13 +66,16 @@ namespace ImageAndTextToDatabase
                     {
                         //Keeps us informed
                         counter++;
+
                         Console.WriteLine("Started processing artwork #" + counter);
+                        Artwork newArtwork = new Artwork();
+
+                        //we still need to add all images in our folder to our database
+                        //
+                        newArtwork.Image = await ImageToByte.ImageToByteConverter();
 
                         string readText = File.ReadAllText(filelocation);
                         string[] lines = readText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-
-                        Artwork newArtwork = new Artwork();
-
                         foreach (string line in lines)
                         {
                             //[0] has our attribute and [1] has our data
