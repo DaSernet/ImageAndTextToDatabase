@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using System.IO;
 using System.Threading.Tasks;
 
 namespace ImageAndTextToDatabase.Converters
 {
-    class ImageToByte
+    internal class ImageToByte
     {
         public static async Task<byte[]> ImageToByteConverter(string filePath)
         {

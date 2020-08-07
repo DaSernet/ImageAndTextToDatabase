@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 
 namespace ImageAndTextToDatabase.Validations
 {
-    static class PathValidations
+    internal static class PathValidations
     {
         public static void Validations(String DatabasePath, String OutputPath)
         {

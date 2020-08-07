@@ -1,11 +1,9 @@
 ﻿namespace ImageAndTextToDatabase.EF
 {
-    using System;
-    using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
     using ImageAndTextToDatabase.Models;
+    using System.Data.Entity;
     using System.Data.Entity.Validation;
+    using System.Linq;
 
     public partial class AHDRCContext : DbContext
     {
@@ -22,10 +20,10 @@
                 .Property(e => e.Identifier)
                 .IsFixedLength();
 
-           /* modelBuilder.Entity<User>()
-                .HasMany(e => e.Comments)
-                .WithRequired(e => e.User)
-                .WillCascadeOnDelete(false);*/
+            /* modelBuilder.Entity<User>()
+                 .HasMany(e => e.Comments)
+                 .WithRequired(e => e.User)
+                 .WillCascadeOnDelete(false);*/
         }
 
         public override int SaveChanges()
@@ -53,4 +51,3 @@
         }
     }
 }
-

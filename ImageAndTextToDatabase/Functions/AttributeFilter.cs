@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using ImageAndTextToDatabase.Repositories;
-using System.Linq;
-using ImageAndTextToDatabase.Models;
 
 namespace ImageAndTextToDatabase.Filters
 {
-    static class AttributeFilter
+    internal static class AttributeFilter
     {
         public static string[] MatchAttribute(String line)
         {
@@ -30,4 +24,3 @@ namespace ImageAndTextToDatabase.Filters
         }
     }
 }
-

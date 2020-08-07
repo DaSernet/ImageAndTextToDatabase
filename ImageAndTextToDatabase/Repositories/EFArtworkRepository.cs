@@ -1,16 +1,14 @@
 ﻿using ImageAndTextToDatabase.EF;
 using ImageAndTextToDatabase.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ImageAndTextToDatabase.Repositories
 {
     public class EFArtworkRepository : IArtworkRepository
     {
         private AHDRCContext context = new AHDRCContext();
+
         public void Add(Artwork artwork)
         {
             context.Artworks.Add(artwork);
