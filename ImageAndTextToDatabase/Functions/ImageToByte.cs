@@ -1,12 +1,14 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace ImageAndTextToDatabase.Functions
 {
-    internal class ImageToByte
+    internal static class ImageToByte
     {
         //gets our photo string
-        private byte[] GetPhoto(string path)
+        public static byte[] GetPhoto(string path)
         {
             FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
             byte[] data = new byte[fs.Length];
@@ -17,7 +19,7 @@ namespace ImageAndTextToDatabase.Functions
             return data;
         }
 
-        private string ByteArrayToString(string path)
+        public static string ByteArrayToString(string path)
         {
             byte[] bytes = GetPhoto(path);
             string result = "0x";

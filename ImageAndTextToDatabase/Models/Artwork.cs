@@ -95,6 +95,6 @@
         public string Workshop { get; set; }
         public string Workshoplist { get; set; }
         public string Yaleid { get; set; }
-        public byte[] Image { get; set; }
+        public string Image { get; set; }
     }
 }

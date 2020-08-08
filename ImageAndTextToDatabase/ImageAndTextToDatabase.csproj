@@ -83,7 +83,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Converters\ImageToByte.cs" />
     <Compile Include="EF\AHDRCContext.cs" />
     <Compile Include="Functions\AttributeFilter.cs" />
     <Compile Include="Functions\ImageToByte.cs" />

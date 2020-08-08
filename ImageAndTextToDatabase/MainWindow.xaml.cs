@@ -1,5 +1,4 @@
-﻿using ImageAndTextToDatabase.Converters;
-using ImageAndTextToDatabase.Filters;
+﻿using ImageAndTextToDatabase.Filters;
 using ImageAndTextToDatabase.Models;
 using ImageAndTextToDatabase.Repositories;
 using ImageAndTextToDatabase.Validations;
@@ -9,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using ImageAndTextToDatabase.Functions;
 
 namespace ImageAndTextToDatabase
 {
@@ -62,17 +62,17 @@ namespace ImageAndTextToDatabase
 
                         //we still need to add all images in our folder to our database
                         string imageLocation = filelocation;
-                        imageLocation.Replace("info_", "");
-                        imageLocation.Replace(".txt", ".jpg");
+                        imageLocation = imageLocation.Replace("info_", "");
+                        imageLocation = imageLocation.Replace(".txt", ".jpg");
                         if (!File.Exists(imageLocation))
                         {
                             Console.WriteLine("File not found: " + imageLocation);
                         }
                         else
                         {
-                            Task<byte[]> readImageTask = ImageToByte.ImageToByteConverter(imageLocation);
-                            newArtwork.Image = await readImageTask;
-                            imageLocation.Replace("001", "002");
+                            Console.WriteLine(imageLocation);
+                            newArtwork.Image = ImageToByte.ByteArrayToString(imageLocation);
+                            Console.WriteLine(newArtwork.Image);
                         }
 
                         string readText = File.ReadAllText(filelocation);
