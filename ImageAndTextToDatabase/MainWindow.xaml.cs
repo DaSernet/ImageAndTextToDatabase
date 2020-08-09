@@ -26,7 +26,7 @@ namespace ImageAndTextToDatabase
             artworkRepository = new EFArtworkRepository();
         }
 
-        private async void ConvertButton_Click(object sender, RoutedEventArgs e)
+        private void ConvertButton_Click(object sender, RoutedEventArgs e)
         {
             if (DatabaseSelectorComboBox.SelectedIndex == 0)
             {
@@ -83,8 +83,8 @@ namespace ImageAndTextToDatabase
                         else
                         {
                             Console.WriteLine(imageLocation);
-                            newArtwork.Image = ImageToByte.ByteArrayToString(imageLocation);
-                            Console.WriteLine(newArtwork.Image);
+                            newArtwork.Image1 = ImageToByte.ByteArrayToString(imageLocation);
+                            Console.WriteLine(newArtwork.Image1);
                         }
 
                         imageLocation = imageLocation.Replace("-001" + OurImageExtention, "-002" + OurImageExtention);
