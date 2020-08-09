@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms.VisualStyles;
 using ImageAndTextToDatabase.Functions;
 
 namespace ImageAndTextToDatabase
@@ -82,9 +83,8 @@ namespace ImageAndTextToDatabase
                         }
                         else
                         {
-                            for (int ourImageNumber = 1; File.Exists(imageLocation); ourImageNumber++)
+                            for (int ourImageNumber = 0; File.Exists(imageLocation); ourImageNumber++)
                             {
-                                imageLocation = imageLocation.Replace("-00" + ourImageNumber + OurImageExtention, "-00" + (ourImageNumber + 1) + OurImageExtention);
                                 switch (ourImageNumber)
                                 {
                                     case 1:
@@ -98,10 +98,35 @@ namespace ImageAndTextToDatabase
                                         break;
 
                                     case 3:
-                                        Console.WriteLine(imageLocation);
                                         newArtwork.Image3 = ImageToByte.ByteArrayToString(imageLocation);
                                         break;
+
+                                    case 4:
+                                        newArtwork.Image4 = ImageToByte.ByteArrayToString(imageLocation);
+                                        break;
+
+                                    case 5:
+                                        newArtwork.Image5 = ImageToByte.ByteArrayToString(imageLocation);
+                                        break;
+
+                                    case 6:
+                                        newArtwork.Image6 = ImageToByte.ByteArrayToString(imageLocation);
+                                        break;
+
+                                    case 7:
+                                        newArtwork.Image7 = ImageToByte.ByteArrayToString(imageLocation);
+                                        break;
+
+                                    case 8:
+                                        newArtwork.Image8 = ImageToByte.ByteArrayToString(imageLocation);
+                                        break;
+
+                                    case 9:
+                                        Console.WriteLine("9 images?");
+                                        newArtwork.Image9 = ImageToByte.ByteArrayToString(imageLocation);
+                                        break;
                                 }
+                                imageLocation = imageLocation.Replace("-00" + ourImageNumber + OurImageExtention, "-00" + (ourImageNumber + 1) + OurImageExtention);
                             }
                         }
 
