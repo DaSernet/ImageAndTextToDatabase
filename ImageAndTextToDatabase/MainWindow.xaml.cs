@@ -82,18 +82,26 @@ namespace ImageAndTextToDatabase
                         }
                         else
                         {
-                        }
-
-                        for (int ourImageNumber = 0; !File.Exists(imageLocation); ourImageNumber++)
-                        {
-                            imageLocation = imageLocation.Replace("-00" + ourImageNumber + OurImageExtention, "-00" + ourImageNumber + OurImageExtention);
-                            Console.WriteLine(imageLocation);
-                            switch (ourImageNumber)
+                            for (int ourImageNumber = 1; File.Exists(imageLocation); ourImageNumber++)
                             {
-                                case 1:
-                                    Console.WriteLine(imageLocation);
-                                    newArtwork.Image1 = ImageToByte.ByteArrayToString(imageLocation);
-                                    break;
+                                imageLocation = imageLocation.Replace("-00" + ourImageNumber + OurImageExtention, "-00" + (ourImageNumber + 1) + OurImageExtention);
+                                switch (ourImageNumber)
+                                {
+                                    case 1:
+                                        Console.WriteLine(imageLocation);
+                                        newArtwork.Image1 = ImageToByte.ByteArrayToString(imageLocation);
+                                        break;
+
+                                    case 2:
+                                        Console.WriteLine(imageLocation);
+                                        newArtwork.Image2 = ImageToByte.ByteArrayToString(imageLocation);
+                                        break;
+
+                                    case 3:
+                                        Console.WriteLine(imageLocation);
+                                        newArtwork.Image3 = ImageToByte.ByteArrayToString(imageLocation);
+                                        break;
+                                }
                             }
                         }
 
