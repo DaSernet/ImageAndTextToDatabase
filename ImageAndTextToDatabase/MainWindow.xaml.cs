@@ -37,7 +37,7 @@ namespace ImageAndTextToDatabase
                 string outputPath = TextBox_OutputPath.Text + "First.txt";
                 string databasePath = TextBox_DatabasePath.Text;
                 //Grabs every file found in our directory and puts it in a list called entries
-                string[] entries = Directory.GetFileSystemEntries(databasePath, "*", System.IO.SearchOption.AllDirectories);
+                string[] entries = Directory.GetFileSystemEntries(databasePath, "*001.txt", System.IO.SearchOption.AllDirectories);
                 //Writes our entire list to our output file!
                 File.WriteAllLines(outputPath, entries);
                 MessageBox.Show("Done");
@@ -75,7 +75,7 @@ namespace ImageAndTextToDatabase
                         }
                         Console.WriteLine(historyLocation);
 
-                        imageLocation = imageLocation.Replace("info_", "");
+                        imageLocation = imageLocation.Replace("info_", String.Empty);
                         imageLocation = imageLocation.Replace(".txt", OurImageExtention);
                         if (!File.Exists(imageLocation))
                         {
@@ -83,7 +83,7 @@ namespace ImageAndTextToDatabase
                         }
                         else
                         {
-                            for (int ourImageNumber = 0; File.Exists(imageLocation); ourImageNumber++)
+                            for (int ourImageNumber = 1; File.Exists(imageLocation); ourImageNumber++)
                             {
                                 switch (ourImageNumber)
                                 {
