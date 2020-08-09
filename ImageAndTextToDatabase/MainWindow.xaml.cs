@@ -60,10 +60,22 @@ namespace ImageAndTextToDatabase
                         Console.WriteLine("Started processing artwork #" + counter);
                         Artwork newArtwork = new Artwork();
 
+                        //What Images are we trying to get?
+                        String OurImageExtention = ".jpg";
+
                         //we still need to add all images in our folder to our database
                         string imageLocation = filelocation;
+                        string historyLocation = filelocation;
+
+                        int index = historyLocation.LastIndexOf("/");
+                        if (index > 0)
+                        {
+                            historyLocation = historyLocation.Substring(0, index + 1) + "history.txt"; //+1 to keep the slash.
+                        }
+                        Console.WriteLine(historyLocation);
+
                         imageLocation = imageLocation.Replace("info_", "");
-                        imageLocation = imageLocation.Replace(".txt", ".jpg");
+                        imageLocation = imageLocation.Replace(".txt", OurImageExtention);
                         if (!File.Exists(imageLocation))
                         {
                             Console.WriteLine("File not found: " + imageLocation);
@@ -73,6 +85,70 @@ namespace ImageAndTextToDatabase
                             Console.WriteLine(imageLocation);
                             newArtwork.Image = ImageToByte.ByteArrayToString(imageLocation);
                             Console.WriteLine(newArtwork.Image);
+                        }
+
+                        imageLocation = imageLocation.Replace("-001" + OurImageExtention, "-002" + OurImageExtention);
+                        if (File.Exists(imageLocation))
+                        {
+                            Console.WriteLine(imageLocation);
+                            newArtwork.Image2 = ImageToByte.ByteArrayToString(imageLocation);
+                        }
+
+                        imageLocation = imageLocation.Replace("-002" + OurImageExtention, "-003" + OurImageExtention);
+                        if (File.Exists(imageLocation))
+                        {
+                            Console.WriteLine(imageLocation);
+                            newArtwork.Image3 = ImageToByte.ByteArrayToString(imageLocation);
+                        }
+
+                        imageLocation = imageLocation.Replace("-003" + OurImageExtention, "-004" + OurImageExtention);
+                        if (File.Exists(imageLocation))
+                        {
+                            Console.WriteLine(imageLocation);
+                            newArtwork.Image4 = ImageToByte.ByteArrayToString(imageLocation);
+                        }
+
+                        imageLocation = imageLocation.Replace("-004" + OurImageExtention, "-005" + OurImageExtention);
+                        if (File.Exists(imageLocation))
+                        {
+                            Console.WriteLine(imageLocation);
+                            newArtwork.Image5 = ImageToByte.ByteArrayToString(imageLocation);
+                        }
+
+                        imageLocation = imageLocation.Replace("-005" + OurImageExtention, "-006" + OurImageExtention);
+                        if (File.Exists(imageLocation))
+                        {
+                            Console.WriteLine(imageLocation);
+                            newArtwork.Image6 = ImageToByte.ByteArrayToString(imageLocation);
+                        }
+
+                        imageLocation = imageLocation.Replace("-006" + OurImageExtention, "-007" + OurImageExtention);
+                        if (File.Exists(imageLocation))
+                        {
+                            Console.WriteLine(imageLocation);
+                            newArtwork.Image7 = ImageToByte.ByteArrayToString(imageLocation);
+                        }
+
+                        imageLocation = imageLocation.Replace("-007" + OurImageExtention, "-008" + OurImageExtention);
+                        if (File.Exists(imageLocation))
+                        {
+                            Console.WriteLine(imageLocation);
+                            newArtwork.Image8 = ImageToByte.ByteArrayToString(imageLocation);
+                        }
+
+                        imageLocation = imageLocation.Replace("-008" + OurImageExtention, "-009" + OurImageExtention);
+                        if (File.Exists(imageLocation))
+                        {
+                            Console.WriteLine(imageLocation);
+                            newArtwork.Image9 = ImageToByte.ByteArrayToString(imageLocation);
+                        }
+
+                        imageLocation = imageLocation.Replace("-009" + OurImageExtention, "-010" + OurImageExtention);
+                        if (File.Exists(imageLocation))
+                        {
+                            Console.WriteLine(imageLocation);
+                            newArtwork.Image10 = ImageToByte.ByteArrayToString(imageLocation);
+                            Console.WriteLine("10 Images were found?");
                         }
 
                         string readText = File.ReadAllText(filelocation);
