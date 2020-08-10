@@ -26,13 +26,6 @@ namespace ImageAndTextToDatabase.Repositories
             return context.Artworks.ToList();
         }
 
-        /*public Artwork GetOne(string name)
-        {
-            //var SelectedArtwork = (from artwork in context.Artworks where artwork.Name == name select artwork).SingleOrDefault();
-            //return SelectedArtwork;
-            //return Artwork;
-        }*/
-
         public void Update(Artwork artwork)
         {
             context.SaveChanges();

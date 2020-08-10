@@ -10,6 +10,7 @@
         public AHDRCContext()
             : base("name=AHDRCConnection")
         {
+            this.Configuration.AutoDetectChangesEnabled = false;
         }
 
         public virtual DbSet<Artwork> Artworks { get; set; }
@@ -19,11 +20,6 @@
             modelBuilder.Entity<Artwork>()
                 .Property(e => e.Identifier)
                 .IsFixedLength();
-
-            /* modelBuilder.Entity<User>()
-                 .HasMany(e => e.Comments)
-                 .WithRequired(e => e.User)
-                 .WillCascadeOnDelete(false);*/
         }
 
         public override int SaveChanges()

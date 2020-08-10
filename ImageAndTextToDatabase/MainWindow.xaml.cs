@@ -75,6 +75,7 @@ namespace ImageAndTextToDatabase
                         }
                         Console.WriteLine(historyLocation);
 
+                        //stores all our images into our artwork
                         imageLocation = imageLocation.Replace("info_", String.Empty);
                         imageLocation = imageLocation.Replace(".txt", OurImageExtention);
                         if (!File.Exists(imageLocation))
