@@ -104,6 +104,5 @@
         public string Image7 { get; set; }
         public string Image8 { get; set; }
         public string Image9 { get; set; }
-        public string Image10 { get; set; }
     }
 }
