@@ -59,6 +59,12 @@ namespace ImageAndTextToDatabase
                         counter++;
 
                         Console.WriteLine("Started processing artwork #" + counter);
+                        //Sends a toast every 100th artwork that is processed
+                        if (counter % 100 == 0 && i != 0)
+                        {
+                            SendNotification("Title", counter + " artworks processed");
+                        }
+
                         Artwork newArtwork = new Artwork();
 
                         //What Images are we trying to get?
