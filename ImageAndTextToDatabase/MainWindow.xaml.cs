@@ -60,7 +60,7 @@ namespace ImageAndTextToDatabase
 
                         Console.WriteLine("Started processing artwork #" + counter);
                         //Sends a toast every 100th artwork that is processed
-                        if (counter % 100 == 0 && i != 0)
+                        if (counter % 100 == 0 && counter != 0)
                         {
                             SendNotification("Title", counter + " artworks processed");
                         }
