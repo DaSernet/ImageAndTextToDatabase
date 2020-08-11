@@ -25,6 +25,50 @@ namespace ImageAndTextToDatabase
             artworkRepository = new EFArtworkRepository();
         }
 
+        public void SendNotification(String Title, String Message)
+        {
+            Notification notification = new Notification();
+            notification.ShowNotification(Title, Message);
+        }
+
+        private void BrowseFolderDatabaseButton_Click(object sender, RoutedEventArgs e)
+        {
+            string selectedFile = null;
+            if (DatabaseSelectorComboBox.SelectedIndex == 0)
+            {
+                using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
+                {
+                    System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                    selectedFile = dialog.SelectedPath + @"\";
+                }
+            }
+            else if (DatabaseSelectorComboBox.SelectedIndex == 1)
+            {
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                if (openFileDialog1.ShowDialog() == true)
+                {
+                    selectedFile = openFileDialog1.FileName;
+                }
+            }
+            TextBox_DatabasePath.Text = selectedFile.Replace(@"\", "/");
+        }
+
+        private void BrowseFolderOutputButton_Click(object sender, RoutedEventArgs e)
+        {
+            string selectedFile = null;
+            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
+            {
+                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                selectedFile = dialog.SelectedPath + @"\";
+            }
+            TextBox_OutputPath.Text = selectedFile.Replace(@"\", "/");
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
         private void ConvertButton_Click(object sender, RoutedEventArgs e)
         {
             if (DatabaseSelectorComboBox.SelectedIndex == 0)
@@ -524,50 +568,6 @@ namespace ImageAndTextToDatabase
                 }
                 MessageBox.Show("Done");
             }
-        }
-
-        private void BrowseFolderDatabaseButton_Click(object sender, RoutedEventArgs e)
-        {
-            string selectedFile = null;
-            if (DatabaseSelectorComboBox.SelectedIndex == 0)
-            {
-                using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
-                {
-                    System.Windows.Forms.DialogResult result = dialog.ShowDialog();
-                    selectedFile = dialog.SelectedPath + @"\";
-                }
-            }
-            else if (DatabaseSelectorComboBox.SelectedIndex == 1)
-            {
-                OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                if (openFileDialog1.ShowDialog() == true)
-                {
-                    selectedFile = openFileDialog1.FileName;
-                }
-            }
-            TextBox_DatabasePath.Text = selectedFile.Replace(@"\", "/");
-        }
-
-        private void BrowseFolderOutputButton_Click(object sender, RoutedEventArgs e)
-        {
-            string selectedFile = null;
-            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
-            {
-                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
-                selectedFile = dialog.SelectedPath + @"\";
-            }
-            TextBox_OutputPath.Text = selectedFile.Replace(@"\", "/");
-        }
-
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
-        public void SendNotification(String Title, String Message)
-        {
-            Notification notification = new Notification();
-            notification.ShowNotification(Title, Message);
         }
     }
 }
