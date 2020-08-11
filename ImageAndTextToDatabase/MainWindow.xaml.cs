@@ -1,4 +1,5 @@
 ﻿using ImageAndTextToDatabase.Filters;
+using ImageAndTextToDatabase.Functions;
 using ImageAndTextToDatabase.Models;
 using ImageAndTextToDatabase.Repositories;
 using ImageAndTextToDatabase.Validations;
@@ -6,10 +7,7 @@ using Microsoft.Win32;
 using System;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Forms.VisualStyles;
-using ImageAndTextToDatabase.Functions;
 
 namespace ImageAndTextToDatabase
 {
