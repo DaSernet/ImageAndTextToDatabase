@@ -7,6 +7,7 @@ using Microsoft.Win32;
 using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 
 namespace ImageAndTextToDatabase
@@ -138,12 +139,15 @@ namespace ImageAndTextToDatabase
                                 {
                                     case 1:
                                         Console.WriteLine(imageLocation);
+                                        Console.WriteLine(ImageToByte.ByteArrayToString(imageLocation));
                                         newArtwork.Image1 = ImageToByte.ByteArrayToString(imageLocation);
+                                        Thread.Sleep(5000);
                                         break;
 
                                     case 2:
                                         Console.WriteLine(imageLocation);
                                         newArtwork.Image2 = ImageToByte.ByteArrayToString(imageLocation);
+                                        Thread.Sleep(5000);
                                         break;
 
                                     case 3:
@@ -566,7 +570,7 @@ namespace ImageAndTextToDatabase
                         artworkRepository.Add(newArtwork);
                     }
                 }
-                MessageBox.Show("Done");
+                SendNotification("Task Complete", "Your file should be ready!");
             }
         }
     }
