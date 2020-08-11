@@ -557,7 +557,14 @@ namespace ImageAndTextToDatabase
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            SendNotification("Test", "spawns in 30! Set sail!");
+            //Application.Current.Shutdown();
+        }
+
+        public void SendNotification(String Title, String Message)
+        {
+            Notification notification = new Notification();
+            notification.ShowNotification(Title, Message);
         }
     }
 }

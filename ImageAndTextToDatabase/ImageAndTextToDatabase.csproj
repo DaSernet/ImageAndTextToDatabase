@@ -64,6 +64,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -86,6 +87,7 @@
     <Compile Include="EF\AHDRCContext.cs" />
     <Compile Include="Functions\AttributeFilter.cs" />
     <Compile Include="Functions\ImageToByte.cs" />
+    <Compile Include="Functions\Notification.cs" />
     <Compile Include="Models\Artwork.cs" />
     <Compile Include="Repositories\EFArtworkRepository.cs" />
     <Compile Include="Repositories\IArtworkRepository.cs" />
