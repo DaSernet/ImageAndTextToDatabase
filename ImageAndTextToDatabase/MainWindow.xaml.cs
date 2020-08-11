@@ -123,7 +123,7 @@ namespace ImageAndTextToDatabase
                                         break;
 
                                     case 9:
-                                        Console.WriteLine("9 images?");
+                                        SendNotification("Artwork #" + counter, "9 Images stored?");
                                         newArtwork.Image9 = ImageToByte.ByteArrayToString(imageLocation);
                                         break;
                                 }
@@ -557,8 +557,7 @@ namespace ImageAndTextToDatabase
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            SendNotification("Test", "spawns in 30! Set sail!");
-            //Application.Current.Shutdown();
+            Application.Current.Shutdown();
         }
 
         public void SendNotification(String Title, String Message)
