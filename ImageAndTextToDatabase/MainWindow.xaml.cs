@@ -68,7 +68,7 @@ namespace ImageAndTextToDatabase
                         Artwork newArtwork = new Artwork();
 
                         //What Images are we trying to get?
-                        String OurImageExtention = ".jpg";
+                        String OurImageExtension = ".jpg";
 
                         //we still need to add all images in our folder to our database
                         string imageLocation = filelocation;
@@ -83,7 +83,7 @@ namespace ImageAndTextToDatabase
 
                         //stores all our images into our artwork
                         imageLocation = imageLocation.Replace("info_", String.Empty);
-                        imageLocation = imageLocation.Replace(".txt", OurImageExtention);
+                        imageLocation = imageLocation.Replace(".txt", OurImageExtension);
                         if (!File.Exists(imageLocation))
                         {
                             Console.WriteLine("File not found: " + imageLocation);
@@ -133,7 +133,7 @@ namespace ImageAndTextToDatabase
                                         newArtwork.Image9 = ImageToByte.ByteArrayToString(imageLocation);
                                         break;
                                 }
-                                imageLocation = imageLocation.Replace("-00" + ourImageNumber + OurImageExtention, "-00" + (ourImageNumber + 1) + OurImageExtention);
+                                imageLocation = imageLocation.Replace("-00" + ourImageNumber + OurImageExtension, "-00" + (ourImageNumber + 1) + OurImageExtension);
                             }
                         }
 
