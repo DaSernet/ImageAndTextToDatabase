@@ -15,8 +15,8 @@
         <Button Content="Browse folder" HorizontalAlignment="Left" Margin="23,130,0,0" VerticalAlignment="Top" Click="BrowseFolderOutputButton_Click" />
         <Button Content="Exit" HorizontalAlignment="Left" Margin="544,235,0,0" VerticalAlignment="Top" Click="CloseButton_Click" Width="40" />
         <ComboBox Name="DatabaseSelectorComboBox" HorizontalAlignment="Left" Margin="23,190,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem IsSelected="True">Text tree hierarchy</ComboBoxItem>
-            <ComboBoxItem>SQL</ComboBoxItem>
+            <ComboBoxItem>Text tree hierarchy</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">SQL</ComboBoxItem>
         </ComboBox>
         <Label Content="Output" HorizontalAlignment="Left" Margin="25,159,0,0" VerticalAlignment="Top" />
     </Grid>
