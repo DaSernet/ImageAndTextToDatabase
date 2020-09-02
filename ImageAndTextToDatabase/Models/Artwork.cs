@@ -97,5 +97,10 @@
         public string Yaleid { get; set; }
         public string Unit { get; set; }
         public string Associatfeatures { get; set; }
+        public string Multiline { get; set; }
+        public string Langsubgroup { get; set; }
+        public string Aquisitiondate { get; set; }
+        public string Medwoodinfo { get; set; }
+        public string Reacttmp { get; set; }
     }
 }
