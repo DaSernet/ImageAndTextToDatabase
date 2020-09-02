@@ -104,8 +104,8 @@ namespace ImageAndTextToDatabase
                         counter++;
 
                         Console.WriteLine("Started processing artwork #" + counter);
-                        //Sends a toast every 100th artwork that is processed
-                        if (counter % 100 == 0 && counter != 0)
+                        //Sends a toast every 5000th artwork that is processed
+                        if (counter % 5000 == 0 && counter != 0)
                         {
                             SendNotification("Title", counter + " artworks processed");
                         }
@@ -117,14 +117,16 @@ namespace ImageAndTextToDatabase
 
                         //we still need to add all images in our folder to our database
                         string imageLocation = filelocation;
-                        string historyLocation = filelocation;
+
+                        //Checks if there is a history file!
+                        /*string historyLocation = filelocation;
 
                         int index = historyLocation.LastIndexOf("/");
                         if (index > 0)
                         {
                             historyLocation = historyLocation.Substring(0, index + 1) + "history.txt"; //+1 to keep the slash.
                         }
-                        Console.WriteLine(historyLocation);
+                        Console.WriteLine(historyLocation);*/
 
                         //stores all our images into our artwork
                         imageLocation = imageLocation.Replace("info_", String.Empty);
