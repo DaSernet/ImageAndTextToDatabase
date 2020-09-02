@@ -95,6 +95,8 @@
         public string Workshop { get; set; }
         public string Workshoplist { get; set; }
         public string Yaleid { get; set; }
+        public string Unit { get; set; }
+        public string Associatfeatures { get; set; }
         public string Image1 { get; set; }
         public string Image2 { get; set; }
         public string Image3 { get; set; }
