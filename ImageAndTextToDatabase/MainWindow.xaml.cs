@@ -574,6 +574,26 @@ namespace ImageAndTextToDatabase
                                     newArtwork.Associatfeatures = extractions[1];
                                     break;
 
+                                case "multiline":
+                                    newArtwork.Multiline = extractions[1];
+                                    break;
+
+                                case "langsubgroup":
+                                    newArtwork.Langsubgroup = extractions[1];
+                                    break;
+
+                                case "aquisitiondate":
+                                    newArtwork.Aquisitiondate = extractions[1];
+                                    break;
+
+                                case "medwoodinfo":
+                                    newArtwork.Medwoodinfo = extractions[1];
+                                    break;
+
+                                case "reacttmp":
+                                    newArtwork.Reacttmp = extractions[1];
+                                    break;
+
                                 case "":
                                     break;
 
