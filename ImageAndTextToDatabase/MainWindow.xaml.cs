@@ -129,9 +129,9 @@ namespace ImageAndTextToDatabase
                         Console.WriteLine(historyLocation);*/
 
                         //stores all our images into our artwork
-                        imageLocation = imageLocation.Replace("info_", String.Empty);
+                        /*imageLocation = imageLocation.Replace("info_", String.Empty);
                         imageLocation = imageLocation.Replace(".txt", OurImageExtension);
-                        /*if (!File.Exists(imageLocation))
+                        if (!File.Exists(imageLocation))
                         {
                             Console.WriteLine("File not found: " + imageLocation);
                         }
@@ -561,6 +561,14 @@ namespace ImageAndTextToDatabase
 
                                 case "yaleid":
                                     newArtwork.Yaleid = extractions[1];
+                                    break;
+
+                                case "unit":
+                                    newArtwork.Unit = extractions[1];
+                                    break;
+
+                                case "associatfeatures":
+                                    newArtwork.Associatfeatures = extractions[1];
                                     break;
 
                                 case "":
