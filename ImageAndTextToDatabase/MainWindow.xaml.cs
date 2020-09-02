@@ -113,7 +113,7 @@ namespace ImageAndTextToDatabase
                         Artwork newArtwork = new Artwork();
 
                         //What Images are we trying to get?
-                        String OurImageExtension = ".jpg";
+                        //String OurImageExtension = ".jpg";
 
                         //we still need to add all images in our folder to our database
                         string imageLocation = filelocation;
