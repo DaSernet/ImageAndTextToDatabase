@@ -129,7 +129,7 @@ namespace ImageAndTextToDatabase
                         //stores all our images into our artwork
                         imageLocation = imageLocation.Replace("info_", String.Empty);
                         imageLocation = imageLocation.Replace(".txt", OurImageExtension);
-                        if (!File.Exists(imageLocation))
+                        /*if (!File.Exists(imageLocation))
                         {
                             Console.WriteLine("File not found: " + imageLocation);
                         }
@@ -183,7 +183,7 @@ namespace ImageAndTextToDatabase
                                 }
                                 imageLocation = imageLocation.Replace("-00" + ourImageNumber + OurImageExtension, "-00" + (ourImageNumber + 1) + OurImageExtension);
                             }
-                        }
+                        }*/
 
                         string readText = File.ReadAllText(filelocation);
                         string[] lines = readText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
