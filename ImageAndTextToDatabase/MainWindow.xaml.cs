@@ -80,9 +80,11 @@ namespace ImageAndTextToDatabase
                 string outputPath = TextBox_OutputPath.Text + "First.txt";
                 string databasePath = TextBox_DatabasePath.Text;
                 //Grabs every file found in our directory and puts it in a list called entries
-                string[] entries = Directory.GetFileSystemEntries(databasePath, "*001.txt", System.IO.SearchOption.AllDirectories);
+                string[] entries = Directory.GetFileSystemEntries(databasePath, "*info_*001.txt", System.IO.SearchOption.AllDirectories);
+                //Makes sure our / & \ are correct
+                string[] outputStringArray = entries.Select(x => x.Replace(@"\", "/")).ToArray();
                 //Writes our entire list to our output file!
-                File.WriteAllLines(outputPath, entries);
+                File.WriteAllLines(outputPath, outputStringArray);
                 MessageBox.Show("Done");
             }
             else if (DatabaseSelectorComboBox.SelectedIndex == 1)
@@ -557,6 +559,9 @@ namespace ImageAndTextToDatabase
 
                                 case "yaleid":
                                     newArtwork.Yaleid = extractions[1];
+                                    break;
+
+                                case "":
                                     break;
 
                                 default:
