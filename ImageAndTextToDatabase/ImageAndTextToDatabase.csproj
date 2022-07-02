@@ -133,13 +133,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AHDRC.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AHDRC_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>AHDRC.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\logo.ico" />
   </ItemGroup>
   <ItemGroup>
