@@ -1,17 +1,1 @@
-﻿coordinates
-Mortar
-
-ext
-jpg
-
-associateferatures
-?
-
-seedpodsinfo
-Abrus precatorius
-
-Reactions
-???
-
-medrskinfo
-sheath
+﻿

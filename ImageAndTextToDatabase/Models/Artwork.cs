@@ -63,6 +63,8 @@
         public string Medseedpodsinfo { get; set; }
         public string Medshinfo { get; set; }
         public string Medskinfo { get; set; }
+
+        public string Medrskinfo { get; set; }
         public string Medstinfo { get; set; }
         public string Medwoinfo { get; set; }
         public string Needbetter { get; set; }
@@ -102,5 +104,7 @@
         public string Aquisitiondate { get; set; }
         public string Medwoodinfo { get; set; }
         public string Reacttmp { get; set; }
+        public string Seedpodsinfo { get; internal set; }
+        public string Coordinates { get; internal set; }
     }
 }

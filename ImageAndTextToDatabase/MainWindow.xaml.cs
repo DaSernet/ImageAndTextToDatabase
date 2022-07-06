@@ -108,7 +108,7 @@ namespace ImageAndTextToDatabase
                             Console.WriteLine("Started processing artwork #" + counter);
                         }
                         //Sends a toast every 5000th artwork that is processed
-                        if (counter % 5000 == 0 && counter != 0)
+                        if (counter % 50000 == 0 && counter != 0)
                         {
                             SendNotification("Title", counter + " artworks processed");
                         }
@@ -196,9 +196,13 @@ namespace ImageAndTextToDatabase
                         {
                             //[0] has our attribute and [1] has our data
                             string[] extractions = AttributeFilter.MatchAttribute(line);
-                            if (extractions[0] != null && extractions[0] != "")
+                            if (extractions.Length == 2)
                             {
                                 extractions[1] = extractions[1].Trim();
+                            } else
+                            {
+                                Array.Resize(ref extractions, extractions.Length + 1);
+                                extractions[extractions.Length - 1] = "new string";
                             }
                             switch (extractions[0])
                             {
@@ -598,12 +602,29 @@ namespace ImageAndTextToDatabase
                                     newArtwork.Reacttmp = extractions[1];
                                     break;
 
+                                case "coordinates":
+                                    newArtwork.Coordinates = extractions[1];
+                                    break;
+
+                                case "medrskinfo":
+                                    newArtwork.Medrskinfo = extractions[1];
+                                    break;
+
+                                case "seedpodsinfo":
+                                    newArtwork.Seedpodsinfo = extractions[1];
+                                    break;
+
+                                case "associateferatures":
+                                    newArtwork.Associatfeatures = extractions[1];
+                                    break;
+
                                 case "":
                                     break;
 
                                 default:
                                     //debugger
                                     Console.WriteLine("error in: " + filelocation);
+                                    if (extractions[0] != "reactions" && extractions[0] != "ext")
                                     Console.WriteLine(extractions[0]);
                                     Console.WriteLine(extractions[1]);
                                     break;

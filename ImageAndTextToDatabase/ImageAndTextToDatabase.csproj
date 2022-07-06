@@ -88,6 +88,15 @@
     <Compile Include="Functions\AttributeFilter.cs" />
     <Compile Include="Functions\ImageToByte.cs" />
     <Compile Include="Functions\Notification.cs" />
+    <Compile Include="Migrations\202207061126388_InitialCreate.cs" />
+    <Compile Include="Migrations\202207061126388_InitialCreate.designer.cs">
+      <DependentUpon>202207061126388_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207062051288_Missing info.cs" />
+    <Compile Include="Migrations\202207062051288_Missing info.designer.cs">
+      <DependentUpon>202207062051288_Missing info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artwork.cs" />
     <Compile Include="Repositories\EFArtworkRepository.cs" />
     <Compile Include="Repositories\IArtworkRepository.cs" />
@@ -119,6 +128,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202207061126388_InitialCreate.resx">
+      <DependentUpon>202207061126388_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207062051288_Missing info.resx">
+      <DependentUpon>202207062051288_Missing info.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -147,7 +162,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="To-do.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
