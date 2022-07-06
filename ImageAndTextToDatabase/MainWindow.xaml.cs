@@ -625,8 +625,10 @@ namespace ImageAndTextToDatabase
                                     //debugger
                                     Console.WriteLine("error in: " + filelocation);
                                     if (extractions[0] != "reactions" && extractions[0] != "ext")
+                                    { 
                                     Console.WriteLine(extractions[0]);
                                     Console.WriteLine(extractions[1]);
+                                    }
                                     break;
                             }
                         }
