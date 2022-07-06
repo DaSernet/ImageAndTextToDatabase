@@ -196,6 +196,10 @@ namespace ImageAndTextToDatabase
                         {
                             //[0] has our attribute and [1] has our data
                             string[] extractions = AttributeFilter.MatchAttribute(line);
+                            if (extractions[0] != null && extractions[0] != "")
+                            {
+                                extractions[1] = extractions[1].Trim();
+                            }
                             switch (extractions[0])
                             {
                                 case "acquiredfrom":
