@@ -352,6 +352,7 @@ namespace ImageAndTextToDatabase
 
                                 case "identifier":
                                     newArtwork.Identifier = extractions[1];
+                                    newArtwork.Category = extractions[1].GetUntilOrEmpty();
                                     break;
 
                                 case "inventory":
@@ -623,9 +624,10 @@ namespace ImageAndTextToDatabase
 
                                 default:
                                     //debugger
-                                    Console.WriteLine("error in: " + filelocation);
+                                    
                                     if (extractions[0] != "reactions" && extractions[0] != "ext")
-                                    { 
+                                    {
+                                    Console.WriteLine("error in: " + filelocation);
                                     Console.WriteLine(extractions[0]);
                                     Console.WriteLine(extractions[1]);
                                     }
@@ -637,6 +639,24 @@ namespace ImageAndTextToDatabase
                 }
                 SendNotification("Task Complete", "Your file should be ready!");
             }
+        }
+    }
+
+    static class Helper
+    {
+        public static string GetUntilOrEmpty(this string text, string stopAt = "-")
+        {
+            if (!String.IsNullOrWhiteSpace(text))
+            {
+                int charLocation = text.IndexOf(stopAt, StringComparison.Ordinal);
+
+                if (charLocation > 0)
+                {
+                    return text.Substring(0, charLocation);
+                }
+            }
+
+            return String.Empty;
         }
     }
 }

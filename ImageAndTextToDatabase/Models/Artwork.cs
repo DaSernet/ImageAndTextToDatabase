@@ -106,5 +106,7 @@
         public string Reacttmp { get; set; }
         public string Seedpodsinfo { get; internal set; }
         public string Coordinates { get; internal set; }
+
+        public string Category { get; set; }
     }
 }

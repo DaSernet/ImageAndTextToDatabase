@@ -96,6 +96,10 @@
     <Compile Include="Migrations\202207062051288_Missing info.designer.cs">
       <DependentUpon>202207062051288_Missing info.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202207131515424_category.cs" />
+    <Compile Include="Migrations\202207131515424_category.designer.cs">
+      <DependentUpon>202207131515424_category.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artwork.cs" />
     <Compile Include="Repositories\EFArtworkRepository.cs" />
@@ -133,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207062051288_Missing info.resx">
       <DependentUpon>202207062051288_Missing info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207131515424_category.resx">
+      <DependentUpon>202207131515424_category.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,1 +1,23 @@
-﻿
+﻿author
+date
+title
+location
+commercial
+city
+catalogue
+Private
+year
+biography
+full_name
+first_name
+last_name
+type
+
+
+
+au: auction sectie
+bk: publicatie sectie
+ph: field photo (terrein foto's) sectie
+xp: exhibition sectie
+co: collection sectie
+pc: postcard sectie
