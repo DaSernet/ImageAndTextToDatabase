@@ -18,12 +18,13 @@ namespace ImageAndTextToDatabase
     public partial class MainWindow : Window
     {
         private IArtworkRepository artworkRepository;
-
+        private IArtworkImageRepository artworkImageRepository;
         public MainWindow()
         {
             InitializeComponent();
 
             artworkRepository = new EFArtworkRepository();
+            artworkImageRepository = new EFArtworkImageRepository();
         }
 
         public void SendNotification(String Title, String Message)
@@ -114,9 +115,10 @@ namespace ImageAndTextToDatabase
                         }
 
                         Artwork newArtwork = new Artwork();
+                        ArtworkImage newArtworkImage = new ArtworkImage();
 
                         //What Images are we trying to get?
-                        //String OurImageExtension = ".jpg";
+                        String OurImageExtension = ".jpg";
 
                         //we still need to add all images in our folder to our database
                         string imageLocation = filelocation;
@@ -130,65 +132,6 @@ namespace ImageAndTextToDatabase
                             historyLocation = historyLocation.Substring(0, index + 1) + "history.txt"; //+1 to keep the slash.
                         }
                         Console.WriteLine(historyLocation);*/
-
-                        //stores all our images into our artwork
-                        /*imageLocation = imageLocation.Replace("info_", String.Empty);
-                        imageLocation = imageLocation.Replace(".txt", OurImageExtension);
-                        if (!File.Exists(imageLocation))
-                        {
-                            Console.WriteLine("File not found: " + imageLocation);
-                        }
-                        else
-                        {
-                            for (int ourImageNumber = 1; File.Exists(imageLocation); ourImageNumber++)
-                            {
-                                switch (ourImageNumber)
-                                {
-                                    case 1:
-                                        Console.WriteLine(imageLocation);
-                                        Console.WriteLine(ImageToByte.ByteArrayToString(imageLocation));
-                                        newArtwork.Image1 = ImageToByte.ByteArrayToString(imageLocation);
-                                        Thread.Sleep(5000);
-                                        break;
-
-                                    case 2:
-                                        Console.WriteLine(imageLocation);
-                                        newArtwork.Image2 = ImageToByte.ByteArrayToString(imageLocation);
-                                        Thread.Sleep(5000);
-                                        break;
-
-                                    case 3:
-                                        newArtwork.Image3 = ImageToByte.ByteArrayToString(imageLocation);
-                                        break;
-
-                                    case 4:
-                                        newArtwork.Image4 = ImageToByte.ByteArrayToString(imageLocation);
-                                        break;
-
-                                    case 5:
-                                        newArtwork.Image5 = ImageToByte.ByteArrayToString(imageLocation);
-                                        break;
-
-                                    case 6:
-                                        newArtwork.Image6 = ImageToByte.ByteArrayToString(imageLocation);
-                                        break;
-
-                                    case 7:
-                                        newArtwork.Image7 = ImageToByte.ByteArrayToString(imageLocation);
-                                        break;
-
-                                    case 8:
-                                        newArtwork.Image8 = ImageToByte.ByteArrayToString(imageLocation);
-                                        break;
-
-                                    case 9:
-                                        SendNotification("Artwork #" + counter, "9 Images stored?");
-                                        newArtwork.Image9 = ImageToByte.ByteArrayToString(imageLocation);
-                                        break;
-                                }
-                                imageLocation = imageLocation.Replace("-00" + ourImageNumber + OurImageExtension, "-00" + (ourImageNumber + 1) + OurImageExtension);
-                            }
-                        }*/
 
                         string readText = File.ReadAllText(filelocation);
                         string[] lines = readText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
@@ -635,6 +578,77 @@ namespace ImageAndTextToDatabase
                             }
                         }
                         artworkRepository.Add(newArtwork);
+
+                        /*//stores all our images into our artwork
+                        imageLocation = imageLocation.Replace("info_", String.Empty);
+                        imageLocation = imageLocation.Replace(".txt", OurImageExtension);
+                        if (!File.Exists(imageLocation))
+                        {
+                            Console.WriteLine("Image not found: " + imageLocation);
+                        }
+                        else
+                        {
+                            for (int ourImageNumber = 1; File.Exists(imageLocation); ourImageNumber++)
+                            {
+
+                                //moving & renaming file
+                                string fileName = null;
+                                if (imageLocation != null)
+                                {
+                                    string uploadDir = @"D:\AHDRC Example\Images";
+                                    int pos = imageLocation.LastIndexOf("/") + 1;
+                                    fileName = Guid.NewGuid().ToString() + "-" + imageLocation.Substring(pos, imageLocation.Length - pos);
+                                    string filePath = Path.Combine(uploadDir, fileName);
+                                    File.Move(imageLocation, filePath);
+                                }
+
+                                switch (ourImageNumber)
+                                {
+                                    case 1:
+                                        Console.WriteLine(imageLocation);
+                                        newArtworkImage.ImageURL = fileName;
+                                        newArtworkImage.Artwork = newArtwork;
+                                        artworkImageRepository.Add(newArtworkImage);
+                                        break;
+
+                                        /*case 2:
+                                            Console.WriteLine(imageLocation);
+                                            newArtwork.Image2 = ImageToByte.ByteArrayToString(imageLocation);
+                                            Thread.Sleep(5000);
+                                            break;
+
+                                        case 3:
+                                            newArtwork.Image3 = ImageToByte.ByteArrayToString(imageLocation);
+                                            break;
+
+                                        case 4:
+                                            newArtwork.Image4 = ImageToByte.ByteArrayToString(imageLocation);
+                                            break;
+
+                                        case 5:
+                                            newArtwork.Image5 = ImageToByte.ByteArrayToString(imageLocation);
+                                            break;
+
+                                        case 6:
+                                            newArtwork.Image6 = ImageToByte.ByteArrayToString(imageLocation);
+                                            break;
+
+                                        case 7:
+                                            newArtwork.Image7 = ImageToByte.ByteArrayToString(imageLocation);
+                                            break;
+
+                                        case 8:
+                                            newArtwork.Image8 = ImageToByte.ByteArrayToString(imageLocation);
+                                            break;
+
+                                        case 9:
+                                            SendNotification("Artwork #" + counter, "9 Images stored?");
+                                            newArtwork.Image9 = ImageToByte.ByteArrayToString(imageLocation);
+                                            break;
+                                }
+                                imageLocation = imageLocation.Replace("-00" + ourImageNumber + OurImageExtension, "-00" + (ourImageNumber + 1) + OurImageExtension);
+                            }
+                        }*/
                     }
                 }
                 SendNotification("Task Complete", "Your file should be ready!");

@@ -15,11 +15,27 @@
 
         public virtual DbSet<Artwork> Artworks { get; set; }
 
+        public virtual DbSet<ArtworkImage> ArtworkImages { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Artwork>()
                 .Property(e => e.Identifier)
                 .IsFixedLength();
+
+            modelBuilder.Entity<Artwork>()
+                .HasKey(b => b.Id);
+
+            modelBuilder.Entity<ArtworkImage>()
+                .HasKey(b => b.Id);
+
+            /*modelBuilder.Entity<ArtworkImage>()
+                .HasRequired(p => p.Artwork)
+                .WithMany(d => d.ArtworkImage)
+                .HasForeignKey(p => p.Artwork);*/
+                
+            Database.SetInitializer<AHDRCContext>(null);
+            base.OnModelCreating(modelBuilder);
         }
 
         public override int SaveChanges()

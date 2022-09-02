@@ -21,3 +21,8 @@ ph: field photo (terrein foto's) sectie
 xp: exhibition sectie
 co: collection sectie
 pc: postcard sectie
+
+
+PhotoCopy=Copyright icon
+PhotoProv=Courtesy of
+Photographer=Photo by:

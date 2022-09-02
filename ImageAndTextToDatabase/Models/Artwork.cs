@@ -1,7 +1,12 @@
-﻿namespace ImageAndTextToDatabase.Models
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ImageAndTextToDatabase.Models
 {
     public partial class Artwork
     {
+        [Key]
         public int Id { get; set; }
         public string Acquiredfrom { get; set; }
         public string Acquisitiondate { get; set; }
@@ -106,7 +111,9 @@
         public string Reacttmp { get; set; }
         public string Seedpodsinfo { get; internal set; }
         public string Coordinates { get; internal set; }
-
         public string Category { get; set; }
+
+        /*[ForeignKey(nameof(Id))]
+        public IEnumerable<ArtworkImage> ArtworkImage { get; set; }*/
     }
 }
