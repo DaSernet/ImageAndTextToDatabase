@@ -579,7 +579,7 @@ namespace ImageAndTextToDatabase
                         }
                         artworkRepository.Add(newArtwork);
 
-                        /*//stores all our images into our artwork
+                        //stores all our images into our artwork
                         imageLocation = imageLocation.Replace("info_", String.Empty);
                         imageLocation = imageLocation.Replace(".txt", OurImageExtension);
                         if (!File.Exists(imageLocation))
@@ -644,11 +644,11 @@ namespace ImageAndTextToDatabase
                                         case 9:
                                             SendNotification("Artwork #" + counter, "9 Images stored?");
                                             newArtwork.Image9 = ImageToByte.ByteArrayToString(imageLocation);
-                                            break;
+                                            break;*/
                                 }
                                 imageLocation = imageLocation.Replace("-00" + ourImageNumber + OurImageExtension, "-00" + (ourImageNumber + 1) + OurImageExtension);
                             }
-                        }*/
+                        }
                     }
                 }
                 SendNotification("Task Complete", "Your file should be ready!");

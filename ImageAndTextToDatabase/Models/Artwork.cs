@@ -112,6 +112,7 @@ namespace ImageAndTextToDatabase.Models
         public string Seedpodsinfo { get; internal set; }
         public string Coordinates { get; internal set; }
         public string Category { get; set; }
+        public ICollection<ArtworkImage> ArtworkImage { get; set; }
 
         /*[ForeignKey(nameof(Id))]
         public IEnumerable<ArtworkImage> ArtworkImage { get; set; }*/

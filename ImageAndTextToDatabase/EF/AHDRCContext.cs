@@ -20,20 +20,16 @@
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Artwork>()
+                .HasKey(b => b.Id)
                 .Property(e => e.Identifier)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Artwork>()
-                .HasKey(b => b.Id);
-
             modelBuilder.Entity<ArtworkImage>()
-                .HasKey(b => b.Id);
-
-            /*modelBuilder.Entity<ArtworkImage>()
+                .HasKey(b => b.Id)
                 .HasRequired(p => p.Artwork)
                 .WithMany(d => d.ArtworkImage)
-                .HasForeignKey(p => p.Artwork);*/
-                
+                .HasForeignKey(p => p.ArtworkId);
+
             Database.SetInitializer<AHDRCContext>(null);
             base.OnModelCreating(modelBuilder);
         }

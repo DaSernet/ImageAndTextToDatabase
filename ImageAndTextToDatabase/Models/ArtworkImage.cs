@@ -18,5 +18,6 @@ namespace ImageAndTextToDatabase.Models
         public string Copyright { get; set; }
         public string ImageSize { get; set; }
         public Artwork Artwork { get; set; }
+        public int ArtworkId { get; set; }
     }
 }
