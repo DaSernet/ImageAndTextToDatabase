@@ -611,40 +611,62 @@ namespace ImageAndTextToDatabase
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
-                                        /*case 2:
+                                        case 2:
                                             Console.WriteLine(imageLocation);
-                                            newArtwork.Image2 = ImageToByte.ByteArrayToString(imageLocation);
-                                            Thread.Sleep(5000);
+                                        newArtworkImage.ImageURL = fileName;
+                                        newArtworkImage.Artwork = newArtwork;
+                                        artworkImageRepository.Add(newArtworkImage);
                                             break;
 
                                         case 3:
-                                            newArtwork.Image3 = ImageToByte.ByteArrayToString(imageLocation);
-                                            break;
+                                        Console.WriteLine(imageLocation);
+                                        newArtworkImage.ImageURL = fileName;
+                                        newArtworkImage.Artwork = newArtwork;
+                                        artworkImageRepository.Add(newArtworkImage);
+                                        break;
 
                                         case 4:
-                                            newArtwork.Image4 = ImageToByte.ByteArrayToString(imageLocation);
-                                            break;
+                                        Console.WriteLine(imageLocation);
+                                        newArtworkImage.ImageURL = fileName;
+                                        newArtworkImage.Artwork = newArtwork;
+                                        artworkImageRepository.Add(newArtworkImage);
+                                        break;
 
                                         case 5:
-                                            newArtwork.Image5 = ImageToByte.ByteArrayToString(imageLocation);
-                                            break;
+                                        Console.WriteLine(imageLocation);
+                                        newArtworkImage.ImageURL = fileName;
+                                        newArtworkImage.Artwork = newArtwork;
+                                        artworkImageRepository.Add(newArtworkImage);
+                                        break;
 
                                         case 6:
-                                            newArtwork.Image6 = ImageToByte.ByteArrayToString(imageLocation);
-                                            break;
+                                        Console.WriteLine(imageLocation);
+                                        newArtworkImage.ImageURL = fileName;
+                                        newArtworkImage.Artwork = newArtwork;
+                                        artworkImageRepository.Add(newArtworkImage);
+                                        break;
 
                                         case 7:
-                                            newArtwork.Image7 = ImageToByte.ByteArrayToString(imageLocation);
-                                            break;
+                                        Console.WriteLine(imageLocation);
+                                        newArtworkImage.ImageURL = fileName;
+                                        newArtworkImage.Artwork = newArtwork;
+                                        artworkImageRepository.Add(newArtworkImage);
+                                        break;
 
                                         case 8:
-                                            newArtwork.Image8 = ImageToByte.ByteArrayToString(imageLocation);
-                                            break;
+                                        Console.WriteLine(imageLocation);
+                                        newArtworkImage.ImageURL = fileName;
+                                        newArtworkImage.Artwork = newArtwork;
+                                        artworkImageRepository.Add(newArtworkImage);
+                                        break;
 
                                         case 9:
                                             SendNotification("Artwork #" + counter, "9 Images stored?");
-                                            newArtwork.Image9 = ImageToByte.ByteArrayToString(imageLocation);
-                                            break;*/
+                                        Console.WriteLine(imageLocation);
+                                        newArtworkImage.ImageURL = fileName;
+                                        newArtworkImage.Artwork = newArtwork;
+                                        artworkImageRepository.Add(newArtworkImage);
+                                        break;
                                 }
                                 imageLocation = imageLocation.Replace("-00" + ourImageNumber + OurImageExtension, "-00" + (ourImageNumber + 1) + OurImageExtension);
                             }
