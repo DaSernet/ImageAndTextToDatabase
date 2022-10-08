@@ -1,17 +1,53 @@
-﻿author
+﻿Au:
+author
+category
+collections
 date
+isbn
+publisher
 title
-location
-commercial
-city
-catalogue
-Private
 year
+
+Bk:
+Author 2
+category 2
+date 2
+isbn 2
+publisher 2
+reprints
+title 2
+year 2
+
+co:
+datemax (date to)
+datemin (date from)
+
+pc:
+medriinfo
+obejctposture
+
+
+wh:
+author 3
+bio2 (biography long)
 biography
+book_about (books about)
+born
+category
+dead
+first_Name
 full_name
-first_name
 last_name
-type
+
+xp:
+catalogue
+city
+commercial
+curator
+date
+location
+title
+year
 
 
 

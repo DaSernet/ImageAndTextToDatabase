@@ -7,7 +7,6 @@ using Microsoft.Win32;
 using System;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Windows;
 
 namespace ImageAndTextToDatabase
@@ -19,6 +18,7 @@ namespace ImageAndTextToDatabase
     {
         private IArtworkRepository artworkRepository;
         private IArtworkImageRepository artworkImageRepository;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -118,10 +118,10 @@ namespace ImageAndTextToDatabase
                         ArtworkImage newArtworkImage = new ArtworkImage();
 
                         //What Images are we trying to get?
-                        String OurImageExtension = ".jpg";
 
                         //we still need to add all images in our folder to our database
                         string imageLocation = filelocation;
+                        string imageInfoLocation = filelocation;
 
                         //Checks if there is a history file!
                         /*string historyLocation = filelocation;
@@ -142,7 +142,8 @@ namespace ImageAndTextToDatabase
                             if (extractions.Length == 2)
                             {
                                 extractions[1] = extractions[1].Trim();
-                            } else
+                            }
+                            else
                             {
                                 Array.Resize(ref extractions, extractions.Length + 1);
                                 extractions[extractions.Length - 1] = "new string";
@@ -562,17 +563,119 @@ namespace ImageAndTextToDatabase
                                     newArtwork.Associatfeatures = extractions[1];
                                     break;
 
+                                case "author":
+                                    newArtwork.Author = extractions[1];
+                                    break;
+
+                                case "collections":
+                                    newArtwork.Collections = extractions[1];
+                                    break;
+
+                                case "date":
+                                    newArtwork.Date = extractions[1];
+                                    break;
+
+                                case "isbn":
+                                    newArtwork.ISBN = extractions[1];
+                                    break;
+
+                                case "publisher":
+                                    newArtwork.Publisher = extractions[1];
+                                    break;
+
+                                case "title":
+                                    newArtwork.Title = extractions[1];
+                                    break;
+
+                                case "year":
+                                    newArtwork.Year = extractions[1];
+                                    break;
+
+                                case "reprints":
+                                    newArtwork.Reprints = extractions[1];
+                                    break;
+
+                                case "datemax":
+                                    newArtwork.Datemax = extractions[1];
+                                    break;
+
+                                case "datemin":
+                                    newArtwork.Datemin = extractions[1];
+                                    break;
+
+                                case "medriinfo":
+                                    newArtwork.medriinfo = extractions[1];
+                                    break;
+
+                                case "bio2":
+                                    newArtwork.Bio2 = extractions[1];
+                                    break;
+
+                                case "biography":
+                                    newArtwork.Biography = extractions[1];
+                                    break;
+
+                                case "book_about":
+                                    newArtwork.Book_about = extractions[1];
+                                    break;
+
+                                case "born":
+                                    newArtwork.Born = extractions[1];
+                                    break;
+
+                                case "dead":
+                                    newArtwork.Dead = extractions[1];
+                                    break;
+
+                                case "first_name":
+                                    newArtwork.First_Name = extractions[1];
+                                    break;
+
+                                case "full_name":
+                                    newArtwork.Full_name = extractions[1];
+                                    break;
+
+                                case "last_name":
+                                    newArtwork.Last_name = extractions[1];
+                                    break;
+
+                                case "catalogue":
+                                    newArtwork.Catalogue = extractions[1];
+                                    break;
+
+                                case "city":
+                                    newArtwork.City = extractions[1];
+                                    break;
+
+                                case "commercial":
+                                    newArtwork.Commercial = extractions[1];
+                                    break;
+
+                                case "curator":
+                                    newArtwork.Curator = extractions[1];
+                                    break;
+
+                                case "location":
+                                    newArtwork.Location = extractions[1];
+                                    break;
+                                case "obejctposture":
+                                    newArtwork.Objectposture = extractions[1];
+                                    break;
+                                case "category":
+                                    newArtwork.Categoryofobject = extractions[1];
+                                    break;
+
                                 case "":
                                     break;
 
                                 default:
                                     //debugger
-                                    
+
                                     if (extractions[0] != "reactions" && extractions[0] != "ext")
                                     {
-                                    Console.WriteLine("error in: " + filelocation);
-                                    Console.WriteLine(extractions[0]);
-                                    Console.WriteLine(extractions[1]);
+                                        Console.WriteLine("error in: " + filelocation);
+                                        Console.WriteLine(extractions[0]);
+                                        Console.WriteLine(extractions[1]);
                                     }
                                     break;
                             }
@@ -580,17 +683,36 @@ namespace ImageAndTextToDatabase
                         artworkRepository.Add(newArtwork);
 
                         //stores all our images into our artwork
+                        imageInfoLocation = imageInfoLocation.Replace("info_", "ext_");
+
                         imageLocation = imageLocation.Replace("info_", String.Empty);
-                        imageLocation = imageLocation.Replace(".txt", OurImageExtension);
-                        if (!File.Exists(imageLocation))
+                        String OurImageExtension = "jpg";
+                        String previousImageExtension = null;
+
+                        
+
+
+
+
+                        if (!File.Exists(imageInfoLocation))
                         {
-                            Console.WriteLine("Image not found: " + imageLocation);
+                            Console.WriteLine("Image not found: " + imageInfoLocation);
                         }
                         else
                         {
-                            for (int ourImageNumber = 1; File.Exists(imageLocation); ourImageNumber++)
+                            imageLocation = imageLocation.Replace("txt", OurImageExtension);
+                            string readText3 = File.ReadAllText(imageInfoLocation);
+                            string[] lines3 = readText3.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                            foreach (string line in lines3)
                             {
+                                //[0] has our attribute and [1] has our data
+                                string[] fileExtension = AttributeFilter.MatchAttribute(line);
+                                fileExtension[0] = fileExtension[0].Trim();
+                                OurImageExtension = fileExtension[0];
+                            }
 
+                            for (int ourImageNumber = 1; File.Exists(imageInfoLocation) && File.Exists(imageLocation); ourImageNumber++)
+                            {
                                 //moving & renaming file
                                 string fileName = null;
                                 if (imageLocation != null)
@@ -611,64 +733,81 @@ namespace ImageAndTextToDatabase
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
-                                        case 2:
-                                            Console.WriteLine(imageLocation);
-                                        newArtworkImage.ImageURL = fileName;
-                                        newArtworkImage.Artwork = newArtwork;
-                                        artworkImageRepository.Add(newArtworkImage);
-                                            break;
-
-                                        case 3:
+                                    case 2:
                                         Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
                                         newArtworkImage.Artwork = newArtwork;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
-                                        case 4:
+                                    case 3:
                                         Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
                                         newArtworkImage.Artwork = newArtwork;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
-                                        case 5:
+                                    case 4:
                                         Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
                                         newArtworkImage.Artwork = newArtwork;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
-                                        case 6:
+                                    case 5:
                                         Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
                                         newArtworkImage.Artwork = newArtwork;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
-                                        case 7:
+                                    case 6:
                                         Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
                                         newArtworkImage.Artwork = newArtwork;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
-                                        case 8:
+                                    case 7:
                                         Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
                                         newArtworkImage.Artwork = newArtwork;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
-                                        case 9:
-                                            SendNotification("Artwork #" + counter, "9 Images stored?");
+                                    case 8:
+                                        Console.WriteLine(imageLocation);
+                                        newArtworkImage.ImageURL = fileName;
+                                        newArtworkImage.Artwork = newArtwork;
+                                        artworkImageRepository.Add(newArtworkImage);
+                                        break;
+
+                                    case 9:
+                                        SendNotification("Artwork #" + counter, "9 Images stored?");
                                         Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
                                         newArtworkImage.Artwork = newArtwork;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
                                 }
-                                imageLocation = imageLocation.Replace("-00" + ourImageNumber + OurImageExtension, "-00" + (ourImageNumber + 1) + OurImageExtension);
+                                previousImageExtension = OurImageExtension;
+
+                                imageInfoLocation = imageInfoLocation.Replace("-00" + ourImageNumber + ".", "-00" + (ourImageNumber + 1) + ".");
+                                if (File.Exists(imageInfoLocation)) {
+                                string readText2 = File.ReadAllText(imageInfoLocation);
+                                string[] lines2 = readText2.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                                foreach (string line in lines2)
+                                {
+                                    //[0] has our attribute and [1] has our data
+                                    string[] fileExtension = AttributeFilter.MatchAttribute(line);
+                                    fileExtension[0] = fileExtension[0].Trim();
+                                    OurImageExtension = fileExtension[0];
+                                }
+                                string test = "-00" + ourImageNumber + "." + previousImageExtension;
+                                string test2 = "-00" + (ourImageNumber + 1) + "." + OurImageExtension;
+                                imageLocation = imageLocation.Replace("-00" + ourImageNumber + "." + previousImageExtension, "-00" + (ourImageNumber + 1) + "." + OurImageExtension);
+                                }
+
                             }
                         }
                     }
@@ -678,7 +817,7 @@ namespace ImageAndTextToDatabase
         }
     }
 
-    static class Helper
+    internal static class Helper
     {
         public static string GetUntilOrEmpty(this string text, string stopAt = "-")
         {

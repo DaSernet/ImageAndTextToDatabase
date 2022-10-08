@@ -2,17 +2,17 @@
 {
     using System;
     using System.Data.Entity.Migrations;
-
-    public partial class category : DbMigration
+    
+    public partial class missingcolumns2 : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Artworks", "Category", c => c.String());
+            AddColumn("dbo.Artworks", "Categoryofobject", c => c.String());
         }
-
+        
         public override void Down()
         {
-            DropColumn("dbo.Artworks", "Category");
+            DropColumn("dbo.Artworks", "Categoryofobject");
         }
     }
 }

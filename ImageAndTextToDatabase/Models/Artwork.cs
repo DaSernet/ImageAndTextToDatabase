@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ImageAndTextToDatabase.Models
 {
@@ -8,6 +7,7 @@ namespace ImageAndTextToDatabase.Models
     {
         [Key]
         public int Id { get; set; }
+
         public string Acquiredfrom { get; set; }
         public string Acquisitiondate { get; set; }
         public string Additionalfeatures { get; set; }
@@ -112,9 +112,34 @@ namespace ImageAndTextToDatabase.Models
         public string Seedpodsinfo { get; internal set; }
         public string Coordinates { get; internal set; }
         public string Category { get; set; }
-        public ICollection<ArtworkImage> ArtworkImage { get; set; }
 
-        /*[ForeignKey(nameof(Id))]
-        public IEnumerable<ArtworkImage> ArtworkImage { get; set; }*/
+        public string Author { get; set; }
+        public string Collections { get; set; }
+        public string Date { get; set; }
+        public string ISBN { get; set; }
+        public string Publisher { get; set; }
+        public string Title { get; set; }
+        public string Year { get; set; }
+        public string Reprints { get; set; }
+        public string Datemax { get; set; }
+        public string Datemin { get; set; }
+        public string medriinfo { get; set; }
+
+        public string Bio2 { get; set; }
+        public string Biography { get; set; }
+        public string Book_about { get; set; }
+        public string Born { get; set; }
+        public string Dead { get; set; }
+        public string First_Name { get; set; }
+        public string Full_name { get; set; }
+        public string Last_name { get; set; }
+
+        public string Catalogue { get; set; }
+        public string City { get; set; }
+        public string Commercial { get; set; }
+        public string Curator { get; set; }
+        public string Location { get; set; }
+        public string Categoryofobject { get; set; }
+        public ICollection<ArtworkImage> ArtworkImage { get; set; }
     }
 }

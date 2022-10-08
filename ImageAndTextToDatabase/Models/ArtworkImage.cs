@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ImageAndTextToDatabase.Models
 {
@@ -12,10 +6,8 @@ namespace ImageAndTextToDatabase.Models
     {
         [Key]
         public int Id { get; set; }
+
         public string ImageURL { get; set; }
-        public string Courtesy { get; set; }
-        public string Photographer { get; set; }
-        public string Copyright { get; set; }
         public string ImageSize { get; set; }
         public Artwork Artwork { get; set; }
         public int ArtworkId { get; set; }
