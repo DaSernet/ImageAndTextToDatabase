@@ -452,6 +452,13 @@ namespace ImageAndTextToDatabase
                                     break;
 
                                 case "ispublic":
+                                    if (extractions[1] == "private collection")
+                                    {
+                                        extractions[1] = "false";
+                                    } else
+                                    {
+                                        extractions[1] = "true";
+                                    }
                                     newArtwork.Ispublic = extractions[1];
                                     break;
 
@@ -688,11 +695,6 @@ namespace ImageAndTextToDatabase
                         imageLocation = imageLocation.Replace("info_", String.Empty);
                         String OurImageExtension = "jpg";
                         String previousImageExtension = null;
-
-                        
-
-
-
 
                         if (!File.Exists(imageInfoLocation))
                         {
