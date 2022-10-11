@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ImageAndTextToDatabase.Models
 {
     public partial class Artwork
     {
         [Key]
-        public int Id { get; set; }
+        public int ArtworkId { get; set; }
 
         public string Acquiredfrom { get; set; }
         public string Acquisitiondate { get; set; }

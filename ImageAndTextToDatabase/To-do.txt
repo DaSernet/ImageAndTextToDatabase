@@ -1,57 +1,4 @@
-﻿Au:
-author
-category
-collections
-date
-isbn
-publisher
-title
-year
-
-Bk:
-Author 2
-category 2
-date 2
-isbn 2
-publisher 2
-reprints
-title 2
-year 2
-
-co:
-datemax (date to)
-datemin (date from)
-
-pc:
-medriinfo
-obejctposture
-
-
-wh:
-author 3
-bio2 (biography long)
-biography
-book_about (books about)
-born
-category
-dead
-first_Name
-full_name
-last_name
-
-xp:
-catalogue
-city
-commercial
-curator
-date
-location
-title
-year
-
-
-
-au: auction sectie
+﻿au: auction sectie
 bk: publicatie sectie
 ph: field photo (terrein foto's) sectie
 xp: exhibition sectie
@@ -62,3 +9,7 @@ pc: postcard sectie
 PhotoCopy=Copyright icon
 PhotoProv=Courtesy of
 Photographer=Photo by:
+
+-Reset DB:
+DELETE FROM ArtworkImages DBCC CHECKIDENT (ArtworkImages, RESEED, 0)
+DELETE FROM Artworks

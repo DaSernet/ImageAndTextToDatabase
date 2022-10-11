@@ -88,25 +88,9 @@
     <Compile Include="Functions\AttributeFilter.cs" />
     <Compile Include="Functions\ImageToByte.cs" />
     <Compile Include="Functions\Notification.cs" />
-    <Compile Include="Migrations\202207061126388_InitialCreate.cs" />
-    <Compile Include="Migrations\202207061126388_InitialCreate.designer.cs">
-      <DependentUpon>202207061126388_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202207062051288_Missing info.cs" />
-    <Compile Include="Migrations\202207062051288_Missing info.designer.cs">
-      <DependentUpon>202207062051288_Missing info.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202207131515424_category.cs" />
-    <Compile Include="Migrations\202207131515424_category.designer.cs">
-      <DependentUpon>202207131515424_category.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202210081912039_missing-columns.cs" />
-    <Compile Include="Migrations\202210081912039_missing-columns.designer.cs">
-      <DependentUpon>202210081912039_missing-columns.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202210081918353_missing-columns2.cs" />
-    <Compile Include="Migrations\202210081918353_missing-columns2.designer.cs">
-      <DependentUpon>202210081918353_missing-columns2.cs</DependentUpon>
+    <Compile Include="Migrations\202210111549591_initialcreation2.cs" />
+    <Compile Include="Migrations\202210111549591_initialcreation2.designer.cs">
+      <DependentUpon>202210111549591_initialcreation2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artwork.cs" />
@@ -143,20 +127,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202207061126388_InitialCreate.resx">
-      <DependentUpon>202207061126388_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202207062051288_Missing info.resx">
-      <DependentUpon>202207062051288_Missing info.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202207131515424_category.resx">
-      <DependentUpon>202207131515424_category.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202210081912039_missing-columns.resx">
-      <DependentUpon>202210081912039_missing-columns.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202210081918353_missing-columns2.resx">
-      <DependentUpon>202210081918353_missing-columns2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202210111549591_initialcreation2.resx">
+      <DependentUpon>202210111549591_initialcreation2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

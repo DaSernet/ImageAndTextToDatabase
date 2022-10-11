@@ -7,13 +7,13 @@ namespace ImageAndTextToDatabase.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class missingcolumns : IMigrationMetadata
+    public sealed partial class initialcreation2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(missingcolumns));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initialcreation2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202210081912039_missing-columns"; }
+            get { return "202210111549591_initialcreation2"; }
         }
         
         string IMigrationMetadata.Source
