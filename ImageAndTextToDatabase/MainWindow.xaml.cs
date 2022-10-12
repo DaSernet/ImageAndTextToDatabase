@@ -729,66 +729,57 @@ namespace ImageAndTextToDatabase
                                 switch (ourImageNumber)
                                 {
                                     case 1:
-                                        Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
-                                        newArtworkImage.Artwork = newArtwork;
+                                        newArtworkImage.ArtworkId = newArtwork.ArtworkId;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
                                     case 2:
-                                        Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
-                                        newArtworkImage.Artwork = newArtwork;
+                                        newArtworkImage.ArtworkId = newArtwork.ArtworkId;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
                                     case 3:
-                                        Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
-                                        newArtworkImage.Artwork = newArtwork;
+                                        newArtworkImage.ArtworkId = newArtwork.ArtworkId;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
                                     case 4:
-                                        Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
-                                        newArtworkImage.Artwork = newArtwork;
+                                        newArtworkImage.ArtworkId = newArtwork.ArtworkId;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
                                     case 5:
-                                        Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
-                                        newArtworkImage.Artwork = newArtwork;
+                                        newArtworkImage.ArtworkId = newArtwork.ArtworkId;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
                                     case 6:
-                                        Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
-                                        newArtworkImage.Artwork = newArtwork;
+                                        newArtworkImage.ArtworkId = newArtwork.ArtworkId; ;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
                                     case 7:
-                                        Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
-                                        newArtworkImage.Artwork = newArtwork;
+                                        newArtworkImage.ArtworkId = newArtwork.ArtworkId;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
                                     case 8:
-                                        Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
-                                        newArtworkImage.Artwork = newArtwork;
+                                        newArtworkImage.ArtworkId = newArtwork.ArtworkId;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
 
                                     case 9:
                                         SendNotification("Artwork #" + counter, "9 Images stored?");
-                                        Console.WriteLine(imageLocation);
                                         newArtworkImage.ImageURL = fileName;
-                                        newArtworkImage.Artwork = newArtwork;
+                                        newArtworkImage.ArtworkId = newArtwork.ArtworkId;
                                         artworkImageRepository.Add(newArtworkImage);
                                         break;
                                 }

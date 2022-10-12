@@ -13,3 +13,17 @@ Photographer=Photo by:
 -Reset DB:
 DELETE FROM ArtworkImages DBCC CHECKIDENT (ArtworkImages, RESEED, 0)
 DELETE FROM Artworks
+
+
+
+medcoinfo -> bracelets
+additional_information
+town
+summary
+descr
+
+ignore:
+_modif_date
+_type
+idwho
+gvrid
